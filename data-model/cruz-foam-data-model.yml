@@ -1,0 +1,103 @@
+generated: '2026-08-11'
+method: derived
+source: openapi/ (schemas derived from live HTTP OPTIONS documents)
+description: >-
+  Entity-relationship graph for the cruzfoam.com content API, derived from the published resource
+  schemas and their id-reference fields. Identifiers are integers site-wide — there are no prefixed
+  or globally unique ids, so an id is only meaningful together with its resource type.
+identifiers:
+  scheme: integer
+  prefixed: false
+  note: >-
+    Post, page, attachment and customer ids come from a single shared sequence, so id 4980 is a
+    customer and id 4227 is a page purely by allocation order. Term ids are a separate sequence.
+    Always carry the type alongside the id.
+entities:
+- name: Post
+  resource: /wp/v2/posts
+  count_observed: 139
+  key: id
+  schema: openapi/cruz-foam-posts-api-openapi.yml#/components/schemas/Post
+  relationships:
+  - {type: belongs_to, target: User, via: author}
+  - {type: has_one, target: Attachment, via: featured_media}
+  - {type: has_many, target: Category, via: categories}
+  - {type: has_many, target: Tag, via: tags}
+- name: Page
+  resource: /wp/v2/pages
+  count_observed: 17
+  key: id
+  schema: openapi/cruz-foam-pages-api-openapi.yml#/components/schemas/Page
+  relationships:
+  - {type: belongs_to, target: User, via: author}
+  - {type: has_one, target: Attachment, via: featured_media}
+  - {type: belongs_to, target: Page, via: parent, note: Self-referencing page hierarchy.}
+- name: Customer
+  resource: /wp/v2/customers
+  count_observed: 20
+  key: id
+  schema: openapi/cruz-foam-customers-api-openapi.yml#/components/schemas/Customer
+  note: >-
+    Site-specific custom post type — the Cruz Foam customer showcase. The only entity on this
+    surface that carries company-specific meaning rather than generic CMS content. Records observed
+    include Cherry Stone Aqua Farm, Olivia Macaron and Beachwashed Hair.
+  relationships:
+  - {type: has_one, target: Attachment, via: featured_media}
+  - {type: has_many, target: PortfolioCategory, via: portfolio-categories}
+  fields_of_interest:
+    acf: Advanced Custom Fields payload carrying the showcase detail for each customer.
+    excerpt: Short customer summary.
+- name: Attachment
+  resource: /wp/v2/media
+  count_observed: 551
+  key: id
+  schema: openapi/cruz-foam-media-api-openapi.yml#/components/schemas/Attachment
+  relationships:
+  - {type: belongs_to, target: User, via: author}
+  - {type: belongs_to, target: Post, via: post, note: The object the attachment was uploaded to; may also be a Page or Customer.}
+  fields_of_interest:
+    media_details.sizes: Generated size variants with their own source_url per size.
+    source_url: The canonical file URL.
+- name: Category
+  resource: /wp/v2/categories
+  count_observed: 1
+  key: id
+  taxonomy: category
+  schema: openapi/cruz-foam-taxonomy-api-openapi.yml#/components/schemas/Category
+  relationships:
+  - {type: belongs_to, target: Category, via: parent, note: Hierarchical taxonomy.}
+- name: Tag
+  resource: /wp/v2/tags
+  count_observed: 9
+  key: id
+  taxonomy: post_tag
+  schema: openapi/cruz-foam-taxonomy-api-openapi.yml#/components/schemas/Tag
+- name: PortfolioCategory
+  resource: /wp/v2/portfolio-categories
+  count_observed: 8
+  key: id
+  taxonomy: portfolio-categories
+  schema: openapi/cruz-foam-taxonomy-api-openapi.yml#/components/schemas/PortfolioCategory
+  note: Site-specific taxonomy; the market segments the customer showcase is grouped by.
+- name: User
+  resource: /wp/v2/users
+  count_observed: 3
+  key: id
+  schema: openapi/cruz-foam-discovery-api-openapi.yml#/components/schemas/User
+  note: Public author records only. Site staff who have authored published content.
+- name: SearchResult
+  resource: /wp/v2/search
+  count_observed: 142
+  key: id
+  schema: openapi/cruz-foam-search-api-openapi.yml#/components/schemas/SearchResult
+  note: >-
+    A projection, not a stored entity. Returns id + type + subtype pointing back at Post, Page or
+    Customer. 142 searchable objects = 139 posts + 17 pages + 20 customers minus the objects
+    WordPress excludes from search.
+traversal:
+  embedding: >-
+    Append _embed to any request to inline author, featured media and terms under _embedded,
+    resolving most of this graph in one round trip.
+  links: >-
+    Every record carries _links with rel targets (author, wp:featuredmedia, wp:term, self,
+    collection) — the graph is walkable without knowing these relationships in advance.

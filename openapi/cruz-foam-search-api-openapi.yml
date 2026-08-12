@@ -1,0 +1,191 @@
+openapi: 3.1.0
+info:
+  title: Cruz Foam Search API
+  version: wp/v2
+  description: Public, unauthenticated cross-content search over cruzfoam.com — posts, pages and the customer showcase
+    — returning lightweight id / title / url / type / subtype records (142 searchable objects at capture).
+  contact:
+    name: Cruz Foam
+    url: https://cruzfoam.com/contact/
+  x-derived-from: https://cruzfoam.com/wp-json/ route index + per-route HTTP OPTIONS schema documents
+  x-derived-on: '2026-08-11'
+  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously
+    readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from
+    the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
+servers:
+- url: https://cruzfoam.com/wp-json
+  description: Cruz Foam WordPress REST API
+tags:
+- name: Search
+  description: Cross-content search over cruzfoam.com.
+paths:
+  /wp/v2/search:
+    get:
+      operationId: search
+      summary: Search site content
+      description: Search across every searchable post type on cruzfoam.com.
+      tags:
+      - Search
+      parameters:
+      - name: context
+        in: query
+        description: Scope under which the request is made; determines fields present in response.
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          default: view
+      - name: exclude
+        in: query
+        description: Ensure result set excludes specific IDs.
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+      - name: include
+        in: query
+        description: Limit result set to specific IDs.
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+      - name: page
+        in: query
+        description: Current page of the collection.
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+      - name: per_page
+        in: query
+        description: Maximum number of items to be returned in result set.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+      - name: search
+        in: query
+        description: Limit results to those matching a string.
+        schema:
+          type: string
+      - name: subtype
+        in: query
+        description: Limit results to items of one or more object subtypes.
+        schema:
+          type: array
+          items:
+            enum:
+            - post
+            - page
+            - customers
+            - category
+            - post_tag
+            - portfolio-categories
+            - any
+            type: string
+          default: any
+      - name: type
+        in: query
+        description: Limit results to items of an object type.
+        schema:
+          type: string
+          enum:
+          - post
+          - term
+          - post-format
+          default: post
+      responses:
+        '200':
+          description: Search site content
+          headers:
+            X-WP-Total:
+              description: Total number of records matching the query.
+              schema:
+                type: integer
+            X-WP-TotalPages:
+              description: Total number of pages available at the current per_page.
+              schema:
+                type: integer
+            Link:
+              description: RFC 8288 pagination links (rel="next" / rel="prev").
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SearchResult'
+        '400':
+          description: Invalid parameter(s) — rest_invalid_param.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required or insufficient permission — rest_forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message
+    SearchResult:
+      title: search-result
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the object.
+          type:
+          - integer
+          - string
+        title:
+          description: The title for the object.
+          type: string
+        url:
+          description: URL to the object.
+          type: string
+          format: uri
+        type:
+          description: Object type.
+          type: string
+          enum:
+          - post
+          - term
+          - post-format
+        subtype:
+          description: Object subtype.
+          type: string
+          enum:
+          - post
+          - page
+          - customers
+          - category
+          - post_tag
+          - portfolio-categories

@@ -1,0 +1,24 @@
+generated: '2026-08-11'
+method: searched
+source: https://cruzfoam.com/
+plan_count: 0
+note: >-
+  Cruz Foam sells physical packaging materials, not API access. There is no pricing page, no
+  plans page, no signup and no self-serve checkout anywhere on cruzfoam.com — the page sitemap
+  lists 17 pages and none of them is a pricing or plans page. Commercial engagement runs through
+  a contact form for sample requests and volume quotes. The content API documented in this repo
+  is incidental WordPress infrastructure that is free and unmetered because nobody is selling it.
+  plan_count is 0 as a recorded fact, not an unchecked field.
+plans: []
+commercial_model: contact-for-quote (physical goods)
+contact: https://cruzfoam.com/contact/
+evidence:
+- url: https://cruzfoam.com/page-sitemap.xml
+  http_status: 200
+  finding: 17 pages; no /pricing, /plans, /shop or /checkout entry.
+- url: https://cruzfoam.com/contact/
+  http_status: 200
+  finding: Sample-request and quote contact form; the only commercial entry point.
+- url: https://cruzfoam.com/products/
+  http_status: 200
+  finding: Product pages describe Cruz Foam, Cruz Cool and EcoVino materials with no prices.

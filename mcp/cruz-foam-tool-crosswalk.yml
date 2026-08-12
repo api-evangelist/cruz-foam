@@ -1,0 +1,79 @@
+generated: '2026-08-11'
+method: derived
+source: mcp/cruz-foam-mcp.yml + openapi/
+description: >-
+  Binding between the candidate MCP tool set and the OpenAPI operations that back it. Both sides
+  of this crosswalk are API Evangelist artifacts — Cruz Foam operates no MCP server and publishes
+  no OpenAPI — so there is no provider surface divergence to record. The useful finding is the
+  third column: what the live host exposes that neither side covers.
+surfaces:
+  openapi:
+    files: 9
+    operations: 23
+    gated: false
+    note: Derived from the server's own OPTIONS schema documents; anonymously readable.
+  mcp:
+    url: null
+    gated: null
+    note: No server exists. tools/list was never reachable to introspect; the tool set is candidate.
+  graphql:
+    endpoint: null
+    note: No GraphQL surface. /graphql was not present in the 487-route index.
+coverage:
+  tools_named: 23
+  tools_bound: 23
+  tools_unbound: 0
+  mcp_only: 0
+  rest_ops_total: 23
+  rest_ops_with_tool: 23
+  live_routes_on_host: 487
+  live_routes_documented: 23
+  binding_confidence: high
+crosswalk:
+- {tool: list_posts, category: content, rest: [listPosts], binding: rest, confidence: high}
+- {tool: get_post, category: content, rest: [getPost], binding: rest, confidence: high}
+- {tool: list_pages, category: content, rest: [listPages], binding: rest, confidence: high}
+- {tool: get_page, category: content, rest: [getPage], binding: rest, confidence: high}
+- {tool: list_customers, category: customers, rest: [listCustomers], binding: rest, confidence: high}
+- {tool: get_customer, category: customers, rest: [getCustomer], binding: rest, confidence: high}
+- {tool: list_media, category: media, rest: [listMedia], binding: rest, confidence: high}
+- {tool: get_media_item, category: media, rest: [getMediaItem], binding: rest, confidence: high}
+- {tool: list_categories, category: taxonomy, rest: [listCategories], binding: rest, confidence: high}
+- {tool: get_category, category: taxonomy, rest: [getCategory], binding: rest, confidence: high}
+- {tool: list_tags, category: taxonomy, rest: [listTags], binding: rest, confidence: high}
+- {tool: get_tag, category: taxonomy, rest: [getTag], binding: rest, confidence: high}
+- {tool: list_portfolio_categories, category: taxonomy, rest: [listPortfolioCategories], binding: rest, confidence: high}
+- {tool: get_portfolio_category, category: taxonomy, rest: [getPortfolioCategory], binding: rest, confidence: high}
+- {tool: search_site, category: search, rest: [search], binding: rest, confidence: high}
+- {tool: get_route_index, category: discovery, rest: [getRouteIndex], binding: rest, confidence: high}
+- {tool: list_types, category: discovery, rest: [listTypes], binding: rest, confidence: high}
+- {tool: list_taxonomies, category: discovery, rest: [listTaxonomies], binding: rest, confidence: high}
+- {tool: list_statuses, category: discovery, rest: [listStatuses], binding: rest, confidence: high}
+- {tool: list_users, category: discovery, rest: [listUsers], binding: rest, confidence: high}
+- {tool: get_user, category: discovery, rest: [getUser], binding: rest, confidence: high}
+- {tool: get_oembed, category: metadata, rest: [getOembed], binding: rest, confidence: high}
+- {tool: get_seo_head, category: metadata, rest: [getSeoHead], binding: rest, confidence: high}
+mcp_only: []
+rest_only: []
+host_routes_not_modelled:
+  count: 464
+  reason: >-
+    The live route index carries 487 routes, but 464 of them are administrative, plugin-management
+    or authenticated-only and return 401 to an anonymous caller. They are deliberately excluded
+    from both the OpenAPI and the tool set — modelling them would advertise capability that no
+    public consumer can reach.
+  namespaces_excluded:
+  - {namespace: jetpack/v4, note: Jetpack site management, sync, WordAds/Blaze campaign and stats routes. Authenticated.}
+  - {namespace: jetpack/v4/stats-app, note: Site analytics for site id 238015321. Authenticated.}
+  - {namespace: jetpack-boost/v1, note: Performance scoring. Authenticated.}
+  - {namespace: my-jetpack/v1, note: Product and purchase management. Authenticated.}
+  - {namespace: elementor/v1, note: 'Page-builder editing, global styles, and form submissions. Authenticated.'}
+  - {namespace: elementor-pro/v1, note: Page-builder pro widgets. Authenticated.}
+  - {namespace: yoast/v1, note: 'SEO admin, indexing and integrations. Only get_head is anonymous and it IS modelled.'}
+  - {namespace: redirection/v1, note: Redirect and 404-log management. Authenticated.}
+  - {namespace: objectcache/v1, note: Object-cache analytics. Authenticated.}
+  - {namespace: wpcom/v2, note: 'WordPress.com integrations — Mailchimp, Instagram, Publicize, memberships. Authenticated.'}
+  - {namespace: wpcom/v3, note: Blogging prompts. Authenticated.}
+  - {namespace: wp-site-health/v1, note: Site health tests. Authenticated.}
+  - {namespace: wp-block-editor/v1, note: Block editor support. Authenticated.}
+  - {namespace: wp/v2 (write + admin subset), note: 'Blocks, templates, plugins, themes, widgets, menus, settings, revisions, autosaves. Authenticated.'}

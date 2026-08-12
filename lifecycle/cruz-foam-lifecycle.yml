@@ -1,0 +1,59 @@
+generated: '2026-08-11'
+method: probed
+source: https://cruzfoam.com/wp-json/
+description: >-
+  Cruz Foam publishes no versioning policy, no deprecation policy, no SLA and no status page for
+  the content API behind cruzfoam.com. Everything below is what could be observed; the absences
+  are the finding.
+versioning:
+  scheme: uri-path namespace
+  current: wp/v2
+  namespaces_registered: 18
+  docs: null
+  detail: >-
+    The version is a path namespace inherited from WordPress core and its plugins, not a contract
+    Cruz Foam maintains. It changes when the site is upgraded, on the site owner's schedule, with
+    no announcement channel.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  detail: >-
+    No RFC 8594 Sunset or Deprecation header was observed on any response, and no deprecation
+    policy is published. A route can disappear when a plugin is deactivated — the elementor,
+    jetpack, yoast, redirection and objectcache namespaces that make up most of the 487-route
+    surface are plugin-provided and are not under any stability commitment to third parties.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  detail: >-
+    No status page exists. status.cruzfoam.com does not resolve (NXDOMAIN), and no third-party
+    status host is linked from the site.
+changelog:
+  url: null
+  detail: >-
+    No API changelog. The nearest dated public signal is the news archive at cruzfoam.com/blog/
+    (139 posts) and its RSS feed, which covers company news rather than API change.
+support:
+  api_support_channel: null
+  general_contact: https://cruzfoam.com/contact/
+deprecated_operations: []
+stability_assessment:
+  grade: unmanaged
+  detail: >-
+    Consume defensively. This is a marketing site's CMS API with no versioning commitment, no
+    deprecation notice period, no status page and no support channel. Nine of the twenty-three
+    documented operations sit in core wp/v2 and are the most stable; the plugin namespaces are
+    the most volatile.
+evidence:
+- url: https://cruzfoam.com/wp-json/
+  http_status: 200
+  finding: 487 routes across 18 namespaces; no versioning or deprecation metadata.
+- host: status.cruzfoam.com
+  dns: NXDOMAIN
+  finding: No status page host.
+- url: https://cruzfoam.com/wp-json/wp/v2/posts?per_page=2
+  http_status: 200
+  finding: No Sunset or Deprecation response header.

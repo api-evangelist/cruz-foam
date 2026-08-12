@@ -1,0 +1,35 @@
+generated: '2026-08-11'
+method: probed
+source: live probes of https://cruzfoam.com/.well-known/*
+host: https://cruzfoam.com
+hit_count: 0
+note: >-
+  Every /.well-known/ path probed returned a real 404 with the site's HTML 404 page — not a soft
+  200 shell, so these are honest absences and not a detection failure. cruzfoam.com serves no
+  RFC 8615 discovery surface of any kind. No WellKnown or SecurityTxt pointer is emitted in
+  apis.yml, because a pointer would assert that the provider serves a surface it does not serve.
+  There is one host to probe: the API, docs and website are all cruzfoam.com, and every candidate
+  developer subdomain (api., docs., developer., developers., app., mcp., status., trust., shop.)
+  is NXDOMAIN.
+documents:
+- {path: /.well-known/security.txt, status: 404, content_type: text/html, file: null}
+- {path: /.well-known/openid-configuration, status: 404, content_type: text/html, file: null}
+- {path: /.well-known/oauth-authorization-server, status: 404, content_type: text/html, file: null}
+- {path: /.well-known/api-catalog, status: 404, content_type: text/html, file: null}
+- {path: /.well-known/ai-plugin.json, status: 404, content_type: text/html, file: null}
+- {path: /.well-known/agent-card.json, status: 404, content_type: text/html, file: null}
+- {path: /.well-known/agent.json, status: 404, content_type: text/html, file: null}
+related_probes:
+- {path: /llms.txt, status: 404, note: No provider-published llms.txt; a generated one is in llms/.}
+- {path: /robots.txt, status: 200, note: 'Yoast-generated, "Disallow:" (nothing disallowed), points at sitemap_index.xml. Nothing in this pass was blocked by robots.'}
+- {path: /sitemap.xml, status: 200, note: Yoast sitemap index; 7 child sitemaps.}
+subdomains_checked:
+- {host: api.cruzfoam.com, dns: NXDOMAIN}
+- {host: docs.cruzfoam.com, dns: NXDOMAIN}
+- {host: developer.cruzfoam.com, dns: NXDOMAIN}
+- {host: developers.cruzfoam.com, dns: NXDOMAIN}
+- {host: app.cruzfoam.com, dns: NXDOMAIN}
+- {host: mcp.cruzfoam.com, dns: NXDOMAIN}
+- {host: status.cruzfoam.com, dns: NXDOMAIN}
+- {host: trust.cruzfoam.com, dns: NXDOMAIN}
+- {host: shop.cruzfoam.com, dns: NXDOMAIN}

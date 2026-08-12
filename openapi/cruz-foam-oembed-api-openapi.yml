@@ -1,0 +1,114 @@
+openapi: 3.1.0
+info:
+  title: Cruz Foam oEmbed API
+  version: wp/v2
+  description: Public oEmbed 1.0 provider endpoint for cruzfoam.com URLs, returning embeddable rich metadata (title,
+    author, thumbnail, iframe HTML) for any post, page or customer showcase entry.
+  contact:
+    name: Cruz Foam
+    url: https://cruzfoam.com/contact/
+  x-derived-from: https://cruzfoam.com/wp-json/ route index + per-route HTTP OPTIONS schema documents
+  x-derived-on: '2026-08-11'
+  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously
+    readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from
+    the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
+servers:
+- url: https://cruzfoam.com/wp-json
+  description: Cruz Foam WordPress REST API
+tags:
+- name: oEmbed
+  description: oEmbed 1.0 provider endpoint.
+paths:
+  /oembed/1.0/embed:
+    get:
+      operationId: getOembed
+      summary: Retrieve oEmbed metadata for a URL
+      description: Return the oEmbed 1.0 response for a cruzfoam.com URL.
+      tags:
+      - oEmbed
+      parameters:
+      - name: format
+        in: query
+        schema:
+          default: json
+      - name: maxwidth
+        in: query
+        schema:
+          default: 600
+      - name: url
+        in: query
+        description: The URL of the resource for which to fetch oEmbed data.
+        required: true
+        schema:
+          type: string
+          format: uri
+      responses:
+        '200':
+          description: oEmbed 1.0 response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OEmbedResponse'
+        '404':
+          description: No such resource or no matching route — rest_no_route / rest_*_invalid_id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message
+    OEmbedResponse:
+      type: object
+      description: oEmbed 1.0 rich/link response as served by WordPress.
+      properties:
+        version:
+          type: string
+        provider_name:
+          type: string
+        provider_url:
+          type: string
+          format: uri
+        author_name:
+          type: string
+        author_url:
+          type: string
+          format: uri
+        title:
+          type: string
+        type:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+        html:
+          type: string
+        thumbnail_url:
+          type: string
+          format: uri
+        thumbnail_width:
+          type: integer
+        thumbnail_height:
+          type: integer

@@ -1,0 +1,41 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Cruz Foam Pages API
+  version: 1.0.0
+extends: openapi/cruz-foam-pages-api-openapi.yml
+x-generated: '2026-08-11'
+x-method: generated
+x-note: Cruz Foam publishes no OpenAPI. The document this overlay extends was derived by API Evangelist from the
+  server's own HTTP OPTIONS schema documents. These actions record the enhancements API Evangelist added on top
+  of that derivation — provenance, consumption guidance and cross-links to the artifacts in this repo — so the derived
+  spec can be regenerated from the live host without losing them.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-profile: https://github.com/api-evangelist/cruz-foam
+    x-apievangelist-derived: HTTP OPTIONS schema documents on https://cruzfoam.com/wp-json/, 2026-08-11
+    x-apievangelist-provider-published-spec: false
+    x-apievangelist-surface: Incidental WordPress REST content API behind a marketing site; not a product API.
+- target: $.info
+  update:
+    x-artifacts:
+      authentication: authentication/cruz-foam-authentication.yml
+      errors: errors/cruz-foam-problem-types.yml
+      conventions: conventions/cruz-foam-conventions.yml
+      lifecycle: lifecycle/cruz-foam-lifecycle.yml
+      rate_limits: rate-limits/cruz-foam-rate-limits.yml
+      examples: examples/cruz-foam-examples.yml
+      data_model: data-model/cruz-foam-data-model.yml
+- target: $.servers[0]
+  update:
+    x-anonymous-read: true
+    x-write-requires: WordPress application password; no public issuance path.
+- target: $.paths.*.get
+  update:
+    x-agentic-access:
+      action-class: connected
+      consequence: read
+      token:
+        max-ttl: 3600
+      audit: none
+    x-consumption-note: Send _fields to trim the response; unfiltered records are 12-16KB.

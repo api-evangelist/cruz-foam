@@ -1,18 +1,294 @@
 aid: cruz-foam
 name: Cruz Foam
-description: 'Cruz Foam is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Cruz Foam is a circular materials company founded in 2017 in Santa Cruz, California by John Felts
+  and Marco Rolandi out of research at the UC Santa Cruz Baskin School of Engineering. It makes a
+  certified compostable replacement for expanded polystyrene, built from chitin recovered from
+  shrimp and crustacean shells that would otherwise go to landfill, combined with starches and
+  fibers diverted from agricultural waste streams. Its products include Cruz Foam protective
+  packaging, Cruz Cool insulated cold-chain shippers, and EcoVino wine shippers, sold to consumer
+  brands, appliance manufacturers, seafood and cold-chain shippers, and direct-to-consumer
+  retailers. The company was named to TIME's Best Inventions of 2023 and Fast Company's Most
+  Innovative Companies in 2024. Cruz Foam is a materials manufacturer rather than a software
+  vendor, and publishes no commercial or developer-facing product API, no developer portal, and no
+  SDKs. The only machine-readable interface it exposes is the WordPress REST content API behind its
+  corporate website at cruzfoam.com, which is captured here for discovery purposes and is
+  anonymously readable but read-only.
 url: https://raw.githubusercontent.com/api-evangelist/cruz-foam/refs/heads/main/apis.yml
+image: https://cruzfoam.com/wp-content/uploads/2024/09/cropped-cruz-foam-favicon-192x192.png
+accessModel:
+  pricing: none
+  onboarding: none
+  trial: false
+  try_now: true
+  public: true
+  label: Public read-only content API, no signup
+  confidence: high
+  source:
+  - authentication
+  generated: '2026-08-11'
+  method: derived
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-11'
 modified: '2026-08-11'
 tags:
 - Company
-apis: []
+- Materials Science
+- Sustainable Packaging
+- Compostable Materials
+- Biomaterials
+- Circular Economy
+- Manufacturing
+- Consumer Packaged Goods
+- Cold Chain
+- Sustainability
+- Content
+apis:
+- aid: cruz-foam:cruz-foam-posts-api
+  name: Cruz Foam Posts API
+  description: >-
+    Public, unauthenticated read access to the Cruz Foam news and blog archive via the WordPress
+    core REST API. Verified live at 139 published posts.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Posts
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-posts-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: DataModel
+    url: data-model/cruz-foam-data-model.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-posts-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-pages-api
+  name: Cruz Foam Pages API
+  description: >-
+    Public, unauthenticated read access to the static marketing and policy pages of cruzfoam.com —
+    Products, Science, Impact, About Us, Partners, Customers, Careers, Press, Contact, Terms and
+    Privacy. Verified live at 17 published pages.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Pages
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-pages-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: DataModel
+    url: data-model/cruz-foam-data-model.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-pages-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-customers-api
+  name: Cruz Foam Customers API
+  description: >-
+    Public, unauthenticated read access to the Cruz Foam customer showcase — the site-specific
+    `customers` custom post type behind cruzfoam.com/customers/, listing the brands that ship in
+    Cruz Foam materials, each classified by the portfolio-categories taxonomy. Verified live at 20
+    published entries. This is the only genuinely Cruz-Foam-specific resource on the surface.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Customers
+  - Case Studies
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-customers-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: DataModel
+    url: data-model/cruz-foam-data-model.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-customers-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-media-api
+  name: Cruz Foam Media API
+  description: >-
+    Public, unauthenticated read access to the media library behind cruzfoam.com — product
+    photography, material and science imagery, and press assets with their generated size
+    variants. Verified live at 551 attachments.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Media
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-media-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: DataModel
+    url: data-model/cruz-foam-data-model.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-media-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-taxonomy-api
+  name: Cruz Foam Taxonomy API
+  description: >-
+    Public, unauthenticated read access to the classification vocabularies behind cruzfoam.com:
+    post categories, post tags, and the site-specific portfolio-categories taxonomy that groups the
+    customer showcase by market segment. Verified live at 1 category, 9 tags and 8 portfolio
+    categories.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Taxonomy
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-taxonomy-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: DataModel
+    url: data-model/cruz-foam-data-model.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-taxonomy-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-search-api
+  name: Cruz Foam Search API
+  description: >-
+    Public, unauthenticated cross-content search over cruzfoam.com — posts, pages and the customer
+    showcase — returning lightweight id / title / url / type / subtype records. Verified live at
+    142 searchable objects.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Search
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-search-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-search-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-discovery-api
+  name: Cruz Foam Discovery API
+  description: >-
+    Public, unauthenticated discovery metadata for cruzfoam.com — the self-describing route index
+    (487 routes across 18 namespaces at capture), the registered content types and taxonomies, the
+    publication statuses, and the public author records. This is the surface that makes the rest of
+    the API machine-readable without any published documentation.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - Discovery
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-discovery-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/cruz-foam-lifecycle.yml
+  - type: Overlay
+    url: overlays/cruz-foam-discovery-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-oembed-api
+  name: Cruz Foam oEmbed API
+  description: >-
+    Public oEmbed 1.0 provider endpoint for cruzfoam.com URLs, returning embeddable rich metadata —
+    title, author, thumbnail and iframe HTML — for any post, page or customer showcase entry.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - oEmbed
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-oembed-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Overlay
+    url: overlays/cruz-foam-oembed-api-overlay.yaml
+- aid: cruz-foam:cruz-foam-seo-api
+  name: Cruz Foam SEO Metadata API
+  description: >-
+    Public Yoast SEO head endpoint returning the rendered head metadata and its parsed JSON-LD
+    schema.org graph for any cruzfoam.com URL — a structured-data view of every page without
+    scraping the HTML.
+  humanURL: https://cruzfoam.com/wp-json/
+  baseURL: https://cruzfoam.com/wp-json
+  tags:
+  - SEO
+  - Metadata
+  - JSON-LD
+  properties:
+  - type: OpenAPI
+    url: openapi/cruz-foam-seo-api-openapi.yml
+  - type: Authentication
+    url: authentication/cruz-foam-authentication.yml
+  - type: ErrorCatalog
+    url: errors/cruz-foam-problem-types.yml
+  - type: Conventions
+    url: conventions/cruz-foam-conventions.yml
+  - type: Conformance
+    url: conformance/cruz-foam-conformance.yml
+  - type: Overlay
+    url: overlays/cruz-foam-seo-api-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +296,67 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://cruzfoam.com/
+- type: About
+  url: https://cruzfoam.com/about-us/
+- type: Blog
+  url: https://cruzfoam.com/blog/
+- type: BlogRSS
+  url: https://cruzfoam.com/feed/
+- type: Press
+  url: https://cruzfoam.com/press/
+- type: Contact
+  url: https://cruzfoam.com/contact/
+- type: Careers
+  url: https://cruzfoam.com/careers/
+- type: Partners
+  url: https://cruzfoam.com/partners/
+- type: Customers
+  url: https://cruzfoam.com/customers/
+- type: Products
+  url: https://cruzfoam.com/products/
+- type: TermsOfService
+  url: https://cruzfoam.com/terms/
+- type: PrivacyPolicy
+  url: https://cruzfoam.com/privacy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cruz-foam/
+- type: Twitter
+  url: https://twitter.com/CruzFoam
+- type: Instagram
+  url: https://www.instagram.com/cruzfoam/
+- type: Facebook
+  url: https://www.facebook.com/CruzFoam/
+- type: Authentication
+  url: authentication/cruz-foam-authentication.yml
+- type: ErrorCatalog
+  url: errors/cruz-foam-problem-types.yml
+- type: Conventions
+  url: conventions/cruz-foam-conventions.yml
+- type: DataModel
+  url: data-model/cruz-foam-data-model.yml
+- type: Conformance
+  url: conformance/cruz-foam-conformance.yml
+- type: Lifecycle
+  url: lifecycle/cruz-foam-lifecycle.yml
+- type: RateLimits
+  url: rate-limits/cruz-foam-rate-limits.yml
+- type: Plans
+  url: plans/cruz-foam-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/cruz-foam-llms.txt
+- type: ToolCrosswalk
+  url: mcp/cruz-foam-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Examples
+  url: examples/cruz-foam-examples.yml
+- type: AgenticAccess
+  url: agentic-access/cruz-foam-agentic-access.yml
+- type: DomainSecurity
+  url: security/cruz-foam-domain-security.yml
+x-enrichment:
+  date: '2026-08-11'
+  status: enriched
+  artifacts_added: 37
+  pass: local-v1

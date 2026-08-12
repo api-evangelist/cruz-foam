@@ -1,0 +1,27 @@
+generated: '2026-08-11'
+method: searched
+source: npm registry search, PyPI, GitHub
+package_count: 0
+official_package_count: 0
+note: >-
+  Cruz Foam publishes no client libraries. Searched npm, PyPI and GitHub on 2026-08-11 and found
+  no first-party package under any Cruz Foam name. There is no SDK to date-check, so there is no
+  abandonment signal to read here either — this is an absence of a program, not a decayed one.
+  The content API this repo documents is plain HTTP + JSON and needs no client library.
+packages: []
+registries_checked:
+- {registry: npm, query: cruzfoam, results: 0, url: 'https://registry.npmjs.org/-/v1/search?text=cruzfoam', http_status: 200}
+- {registry: pypi, query: cruzfoam, results: 0, url: https://pypi.org/pypi/cruzfoam/json, http_status: 404}
+- {registry: github, query: 'github.com/cruzfoam', results: 0, url: https://github.com/cruzfoam, http_status: 404}
+unverified_leads:
+- kind: github-organization
+  url: https://github.com/Cruz-Foam
+  http_status: 200
+  created: '2021-10-26'
+  public_repos: 0
+  official: unverified
+  note: >-
+    A GitHub Organization named "Cruz Foam" exists but has zero public repositories, no linked
+    website, no bio and no location. Ownership by the company is plausible but unproven, so no
+    GitHubOrganization pointer is emitted in apis.yml — an empty, unattributable org is not
+    evidence of a public code presence.

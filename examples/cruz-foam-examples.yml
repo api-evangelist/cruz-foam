@@ -1,0 +1,118 @@
+generated: '2026-08-11'
+method: probed
+source: live requests against https://cruzfoam.com/wp-json/ on 2026-08-11
+description: >-
+  Working request/response examples captured live. Every value below was returned by the API — no
+  example is synthesized. All requests are anonymous; no credential is needed. Responses are
+  trimmed with the `_fields` parameter where the full record is large.
+base_url: https://cruzfoam.com/wp-json
+examples:
+- name: List the customer showcase
+  operation: listCustomers
+  spec: openapi/cruz-foam-customers-api-openapi.yml
+  request: 'GET /wp/v2/customers?per_page=20&_fields=id,slug,title,portfolio-categories,link'
+  http_status: 200
+  response_headers: {X-WP-Total: '20', X-WP-TotalPages: '1'}
+  response_excerpt:
+  - {id: 4980, slug: cherry-stone-aqua-farms-sustainable-packaging, title: Cherry Stone Aqua Farm, portfolio-categories: [51, 55, 47]}
+  - {id: 4970, slug: olivia-macaron-sustainable-packaging, title: Olivia Macaron, portfolio-categories: [51, 55, 47]}
+  - {id: 4925, slug: beachwashed-hair-sustainable-packaging, title: Beachwashed Hair, portfolio-categories: [51, 49, 53, 52]}
+  - {id: 4951, slug: caviar-co-sustainable-packaging, title: Caviar Co., portfolio-categories: [51, 55, 47]}
+  - {id: 4825, slug: pawniolo-pets-sustainable-shipping, title: Pawniolo Pets, portfolio-categories: [51, 55, 47]}
+  - {id: 4702, slug: cultured-abalone, title: Cultured Abalone, portfolio-categories: [50, 51, 55, 47]}
+  - {id: 4694, slug: johi-interiors, title: Johi Interiors, portfolio-categories: [50, 51, 49, 52]}
+  - {id: 4503, slug: mondavi-sisters-wine, title: Mondavi Sisters Wine, portfolio-categories: [51, 55, 47]}
+  - {id: 4685, slug: honolulu-zoo, title: Honolulu Zoo, portfolio-categories: [50, 53, 47]}
+  - {id: 4252, slug: wild-idea-buffalo, title: Wild Idea Buffalo, portfolio-categories: [51, 55, 47]}
+  - {id: 4262, slug: amazon-robotics, title: Amazon Robotics}
+  note: >-
+    The `title` field is actually an object, {"rendered": "..."}, on every post-type resource;
+    flattened here for readability. 20 of 20 records returned in one page.
+- name: List the market segments the showcase is grouped by
+  operation: listPortfolioCategories
+  spec: openapi/cruz-foam-taxonomy-api-openapi.yml
+  request: 'GET /wp/v2/portfolio-categories?per_page=20&_fields=id,name,slug,count'
+  http_status: 200
+  response:
+  - {id: 50, name: B2B, slug: b2b, count: 8}
+  - {id: 51, name: B2C, slug: b2c, count: 14}
+  - {id: 49, name: Cushioning, slug: cushioning, count: 8}
+  - {id: 55, name: Food & Wine, slug: food-and-wine, count: 11}
+  - {id: 53, name: Healthcare & Wellness, slug: healthcare-and-wellness, count: 2}
+  - {id: 54, name: Industrial & Commercial, slug: industrial-and-commercial, count: 2}
+  - {id: 47, name: Insulation, slug: insulation, count: 11}
+  - {id: 52, name: Retail & Lifestyle, slug: retail-and-lifestyle, count: 6}
+  note: >-
+    `name` is HTML-escaped in the raw response ("Food &amp; Wine"); unescape before display.
+    These eight terms are the closest thing Cruz Foam publishes to a machine-readable market
+    segmentation of its own customer base.
+- name: Filter the showcase to one segment
+  operation: listCustomers
+  spec: openapi/cruz-foam-customers-api-openapi.yml
+  request: 'GET /wp/v2/customers?portfolio-categories=47&_fields=id,title'
+  http_status: 200
+  note: 'Segment 47 is Insulation; count 11 per the taxonomy response above.'
+- name: Cross-content search
+  operation: search
+  spec: openapi/cruz-foam-search-api-openapi.yml
+  request: 'GET /wp/v2/search?search=compostable&per_page=3'
+  http_status: 200
+  response:
+  - {id: 2880, title: 'Compostable Meat Packaging: A Greener Alternative for the Cold Chain Industry', url: 'https://cruzfoam.com/post/compostable-meat-packaging-a-greener-alternative-for-the-cold-chain-industry/', type: post, subtype: post}
+  - {id: 2883, title: The Crucial Role of Composting Facilities in the Rise of Compostable Products, url: 'https://cruzfoam.com/post/the-crucial-role-of-composting-facilities-in-the-rise-of-compostable-products/', type: post, subtype: post}
+  - {id: 4980, title: Cherry Stone Aqua Farm, url: 'https://cruzfoam.com/post/customers/cherry-stone-aqua-farms-sustainable-packaging/', type: post, subtype: customers}
+  note: >-
+    `subtype` is what distinguishes a blog post from a customer showcase entry, and each result's
+    _links.self points at the right typed collection to fetch the full record.
+- name: List recent posts
+  operation: listPosts
+  spec: openapi/cruz-foam-posts-api-openapi.yml
+  request: 'GET /wp/v2/posts?per_page=2&_fields=id,date,slug,title,link'
+  http_status: 200
+  response_headers: {X-WP-Total: '139', X-WP-TotalPages: '70'}
+  response:
+  - {id: 4096, date: '2025-04-04T08:14:00', slug: mitigating-waste-in-b2b-shipping-strategies-for-sustainable-packaging, title: 'Mitigating Waste in B2B Shipping: Strategies for Sustainable Packaging'}
+  - {id: 4091, date: '2025-03-18T17:26:02', slug: switching-from-epe-and-eps-to-cruz-foam-for-sustainable-household-goods-packaging, title: Switching from EPE and EPS to Cruz Foam for Sustainable Household Goods Packaging}
+  note: >-
+    The most recent post at capture is dated 2025-04-04 — the archive is 139 posts deep but has
+    not been added to in over a year.
+- name: List the tag vocabulary
+  operation: listTags
+  spec: openapi/cruz-foam-taxonomy-api-openapi.yml
+  request: 'GET /wp/v2/tags?per_page=20&_fields=id,name,slug,count'
+  http_status: 200
+  response:
+  - {id: 40, name: Compostability, slug: compostability, count: 2}
+  - {id: 42, name: Compostable Packagign, slug: compostable-packagign, count: 0}
+  - {id: 43, name: Compostable Packaging, slug: compostable-packaging, count: 2}
+  - {id: 41, name: Composting, slug: composting, count: 2}
+  - {id: 36, name: Packaging, slug: packaging, count: 3}
+  - {id: 39, name: Plastic Packaging, slug: plastic-packaging, count: 1}
+  - {id: 38, name: Pollution, slug: pollution, count: 1}
+  - {id: 35, name: Sustainability, slug: sustainability, count: 3}
+  - {id: 37, name: Sustainable Packaging, slug: sustainable-packaging, count: 2}
+  note: >-
+    Tag 42 "Compostable Packagign" is a typo term with count 0, sitting next to tag 43
+    "Compostable Packaging". Only 9 tags cover 139 posts, so tags are not a reliable filter here.
+- name: Retrieve the self-describing route index
+  operation: getRouteIndex
+  spec: openapi/cruz-foam-discovery-api-openapi.yml
+  request: 'GET /'
+  http_status: 200
+  response_excerpt:
+    name: Cruz Foam
+    description: Sustainable Foam Packaging Solutions
+    url: https://cruzfoam.com
+    namespaces: [oembed/1.0, jetpack/v4, redirection/v1, yoast/v1, wpcom/v2, elementor/v1, wp/v2, wp-site-health/v1, wp-block-editor/v1]
+    authentication: {application-passwords: {endpoints: {authorization: 'https://cruzfoam.com/wp-admin/authorize-application.php'}}}
+  note: 18 namespaces and 487 routes at capture; the namespaces list above is truncated.
+- name: Pagination error
+  operation: listPosts
+  request: 'GET /wp/v2/posts?per_page=999'
+  http_status: 400
+  response: {code: rest_invalid_param, message: 'Invalid parameter(s): per_page', data: {status: 400, params: {per_page: per_page must be between 1 (inclusive) and 100 (inclusive)}}}
+- name: Authentication wall
+  request: 'GET /wp/v2/settings'
+  http_status: 401
+  response: {code: rest_forbidden, message: 'Sorry, you are not allowed to do that.', data: {status: 401}}
+  note: The boundary of the public surface. Every write method answers the same way.

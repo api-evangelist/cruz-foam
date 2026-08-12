@@ -1,0 +1,625 @@
+openapi: 3.1.0
+info:
+  title: Cruz Foam Posts API
+  version: wp/v2
+  description: 'Public, unauthenticated read access to the Cruz Foam news and blog archive (139 published posts
+    at capture) via the WordPress core REST API. Anonymous access is read-only: the collection answers `Allow: GET`
+    without credentials. Write methods exist on the same routes but require WordPress application-password authentication
+    and are not part of the public surface.'
+  contact:
+    name: Cruz Foam
+    url: https://cruzfoam.com/contact/
+  x-derived-from: https://cruzfoam.com/wp-json/ route index + per-route HTTP OPTIONS schema documents
+  x-derived-on: '2026-08-11'
+  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously
+    readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from
+    the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
+servers:
+- url: https://cruzfoam.com/wp-json
+  description: Cruz Foam WordPress REST API
+tags:
+- name: Posts
+  description: Cruz Foam news, announcements and articles.
+paths:
+  /wp/v2/posts:
+    get:
+      operationId: listPosts
+      summary: List posts
+      description: Retrieve a paginated collection of published Cruz Foam posts.
+      tags:
+      - Posts
+      parameters:
+      - name: after
+        in: query
+        description: Limit response to posts published after a given ISO8601 compliant date.
+        schema:
+          type: string
+          format: date-time
+      - name: author
+        in: query
+        description: Limit result set to posts assigned to specific authors.
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+      - name: author_exclude
+        in: query
+        description: Ensure result set excludes posts assigned to specific authors.
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+      - name: before
+        in: query
+        description: Limit response to posts published before a given ISO8601 compliant date.
+        schema:
+          type: string
+          format: date-time
+      - name: categories
+        in: query
+        description: Limit result set to items with specific terms assigned in the categories taxonomy.
+        schema:
+          type: object
+      - name: categories_exclude
+        in: query
+        description: Limit result set to items except those with specific terms assigned in the categories taxonomy.
+        schema:
+          type: object
+      - name: context
+        in: query
+        description: Scope under which the request is made; determines fields present in response.
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+      - name: exclude
+        in: query
+        description: Ensure result set excludes specific IDs.
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+      - name: format
+        in: query
+        description: Limit result set to items assigned one or more given formats.
+        schema:
+          type: array
+          items:
+            enum:
+            - standard
+            - aside
+            - chat
+            - gallery
+            - link
+            - image
+            - quote
+            - status
+            - video
+            - audio
+            type: string
+      - name: ignore_sticky
+        in: query
+        description: Whether to ignore sticky posts or not.
+        schema:
+          type: boolean
+          default: true
+      - name: include
+        in: query
+        description: Limit result set to specific IDs.
+        schema:
+          type: array
+          items:
+            type: integer
+          default: []
+      - name: modified_after
+        in: query
+        description: Limit response to posts modified after a given ISO8601 compliant date.
+        schema:
+          type: string
+          format: date-time
+      - name: modified_before
+        in: query
+        description: Limit response to posts modified before a given ISO8601 compliant date.
+        schema:
+          type: string
+          format: date-time
+      - name: offset
+        in: query
+        description: Offset the result set by a specific number of items.
+        schema:
+          type: integer
+      - name: order
+        in: query
+        description: Order sort attribute ascending or descending.
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+      - name: orderby
+        in: query
+        description: Sort collection by post attribute.
+        schema:
+          type: string
+          enum:
+          - author
+          - date
+          - id
+          - include
+          - modified
+          - parent
+          - relevance
+          - slug
+          - include_slugs
+          - title
+          default: date
+      - name: page
+        in: query
+        description: Current page of the collection.
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+      - name: per_page
+        in: query
+        description: Maximum number of items to be returned in result set.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 10
+      - name: search
+        in: query
+        description: Limit results to those matching a string.
+        schema:
+          type: string
+      - name: search_columns
+        in: query
+        description: Array of column names to be searched.
+        schema:
+          type: array
+          items:
+            enum:
+            - post_title
+            - post_content
+            - post_excerpt
+            type: string
+          default: []
+      - name: search_semantics
+        in: query
+        description: How to interpret the search input.
+        schema:
+          type: string
+          enum:
+          - exact
+      - name: slug
+        in: query
+        description: Limit result set to posts with one or more specific slugs.
+        schema:
+          type: array
+          items:
+            type: string
+      - name: status
+        in: query
+        description: Limit result set to posts assigned one or more statuses.
+        schema:
+          type: array
+          items:
+            enum:
+            - publish
+            - future
+            - draft
+            - pending
+            - private
+            - trash
+            - auto-draft
+            - inherit
+            - request-pending
+            - request-confirmed
+            - request-failed
+            - request-completed
+            - acf-disabled
+            - spam
+            - dp-rewrite-republish
+            - any
+            type: string
+          default: publish
+      - name: sticky
+        in: query
+        description: Limit result set to items that are sticky.
+        schema:
+          type: boolean
+      - name: tags
+        in: query
+        description: Limit result set to items with specific terms assigned in the tags taxonomy.
+        schema:
+          type: object
+      - name: tags_exclude
+        in: query
+        description: Limit result set to items except those with specific terms assigned in the tags taxonomy.
+        schema:
+          type: object
+      - name: tax_relation
+        in: query
+        description: Limit result set based on relationship between multiple taxonomies.
+        schema:
+          type: string
+          enum:
+          - AND
+          - OR
+      responses:
+        '200':
+          description: List posts
+          headers:
+            X-WP-Total:
+              description: Total number of records matching the query.
+              schema:
+                type: integer
+            X-WP-TotalPages:
+              description: Total number of pages available at the current per_page.
+              schema:
+                type: integer
+            Link:
+              description: RFC 8288 pagination links (rel="next" / rel="prev").
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+        '400':
+          description: Invalid parameter(s) — rest_invalid_param.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Authentication required or insufficient permission — rest_forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /wp/v2/posts/{id}:
+    get:
+      operationId: getPost
+      summary: Retrieve a post
+      description: Retrieve a single published post by its numeric id.
+      tags:
+      - Posts
+      parameters:
+      - name: context
+        in: query
+        description: Scope under which the request is made; determines fields present in response.
+        schema:
+          type: string
+          enum:
+          - view
+          - embed
+          - edit
+          default: view
+      - name: excerpt_length
+        in: query
+        description: Override the default excerpt length.
+        schema:
+          type: integer
+      - name: id
+        in: path
+        description: Unique identifier for the post.
+        schema:
+          type: integer
+        required: true
+      - name: password
+        in: query
+        description: The password for the post if it is password protected.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Retrieve a post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '400':
+          description: Invalid parameter(s) — rest_invalid_param.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: No such resource or no matching route — rest_no_route / rest_*_invalid_id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message
+    Post:
+      title: post
+      type: object
+      properties:
+        date:
+          description: The date the post was published, in the site's timezone.
+          type: string
+          format: date-time
+        date_gmt:
+          description: The date the post was published, as GMT.
+          type: string
+          format: date-time
+        guid:
+          description: The globally unique identifier for the post.
+          type: object
+          properties:
+            raw:
+              description: GUID for the post, as it exists in the database.
+              type: string
+            rendered:
+              description: GUID for the post, transformed for display.
+              type: string
+        id:
+          description: Unique identifier for the post.
+          type: integer
+        link:
+          description: URL to the post.
+          type: string
+          format: uri
+        modified:
+          description: The date the post was last modified, in the site's timezone.
+          type: string
+          format: date-time
+        modified_gmt:
+          description: The date the post was last modified, as GMT.
+          type: string
+          format: date-time
+        slug:
+          description: An alphanumeric identifier for the post unique to its type.
+          type: string
+        status:
+          description: A named status for the post.
+          type: string
+          enum:
+          - publish
+          - future
+          - draft
+          - pending
+          - private
+          - acf-disabled
+          - spam
+        type:
+          description: Type of post.
+          type: string
+        password:
+          description: A password to protect access to the content and excerpt.
+          type: string
+        permalink_template:
+          description: Permalink template for the post.
+          type: string
+        generated_slug:
+          description: Slug automatically generated from the post title.
+          type: string
+        class_list:
+          description: An array of the class names for the post container element.
+          type: array
+          items:
+            type: string
+        title:
+          description: The title for the post.
+          type: object
+          properties:
+            raw:
+              description: Title for the post, as it exists in the database.
+              type: string
+            rendered:
+              description: HTML title for the post, transformed for display.
+              type: string
+        content:
+          description: The content for the post.
+          type: object
+          properties:
+            raw:
+              description: Content for the post, as it exists in the database.
+              type: string
+            rendered:
+              description: HTML content for the post, transformed for display.
+              type: string
+            block_version:
+              description: Version of the content block format used by the post.
+              type: integer
+            protected:
+              description: Whether the content is protected with a password.
+              type: boolean
+        author:
+          description: The ID for the author of the post.
+          type: integer
+        excerpt:
+          description: The excerpt for the post.
+          type: object
+          properties:
+            raw:
+              description: Excerpt for the post, as it exists in the database.
+              type: string
+            rendered:
+              description: HTML excerpt for the post, transformed for display.
+              type: string
+            protected:
+              description: Whether the excerpt is protected with a password.
+              type: boolean
+        featured_media:
+          description: The ID of the featured media for the post.
+          type: integer
+        comment_status:
+          description: Whether or not comments are open on the post.
+          type: string
+          enum:
+          - open
+          - closed
+        ping_status:
+          description: Whether or not the post can be pinged.
+          type: string
+          enum:
+          - open
+          - closed
+        format:
+          description: The format for the post.
+          type: string
+          enum:
+          - standard
+          - aside
+          - chat
+          - gallery
+          - link
+          - image
+          - quote
+          - status
+          - video
+          - audio
+        meta:
+          description: Meta fields.
+          type: object
+          properties:
+            _acf_changed:
+              type: boolean
+              title: ''
+              description: ''
+              default: false
+            _jetpack_memberships_contains_paid_content:
+              type: boolean
+              title: ''
+              description: ''
+              default: false
+            footnotes:
+              type: string
+              title: ''
+              description: ''
+              default: ''
+        sticky:
+          description: Whether or not the post should be treated as sticky.
+          type: boolean
+        template:
+          description: The theme file to use to display the post.
+          type: string
+        categories:
+          description: The terms assigned to the post in the category taxonomy.
+          type: array
+          items:
+            type: integer
+        tags:
+          description: The terms assigned to the post in the post_tag taxonomy.
+          type: array
+          items:
+            type: integer
+        acf:
+          description: ACF field data
+          type: object
+          properties: []
+        jetpack_sharing_enabled:
+          description: Are sharing buttons enabled?
+          type: boolean
+      links:
+      - rel: https://api.w.org/action-publish
+        title: The current user can publish this post.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            status:
+              type: string
+              enum:
+              - publish
+              - future
+      - rel: https://api.w.org/action-unfiltered-html
+        title: The current user can post unfiltered HTML markup and JavaScript.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            content:
+              raw:
+                type: string
+      - rel: https://api.w.org/action-sticky
+        title: The current user can sticky this post.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            sticky:
+              type: boolean
+      - rel: https://api.w.org/action-assign-author
+        title: The current user can change the author on this post.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            author:
+              type: integer
+      - rel: https://api.w.org/action-assign-categories
+        title: The current user can assign terms in the category taxonomy.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            categories:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-create-categories
+        title: The current user can create terms in the category taxonomy.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            categories:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-assign-tags
+        title: The current user can assign terms in the post_tag taxonomy.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: integer
+      - rel: https://api.w.org/action-create-tags
+        title: The current user can create terms in the post_tag taxonomy.
+        href: https://cruzfoam.com/wp-json/wp/v2/posts/{id}
+        targetSchema:
+          type: object
+          properties:
+            tags:
+              type: array
+              items:
+                type: integer
