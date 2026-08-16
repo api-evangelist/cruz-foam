@@ -1,0 +1,21 @@
+{
+  "repo": "cruz-foam",
+  "feeds": [
+    {
+      "source": "https://cruzfoam.com/about-us/",
+      "feed_url": "https://cruzfoam.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://cruzfoam.com/blog/",
+      "feed_url": "https://cruzfoam.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-15T12:22:01Z"
+}
