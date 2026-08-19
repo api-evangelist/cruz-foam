@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cruz Foam oEmbed API",
+    "version": "wp/v2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "oEmbed",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve oEmbed metadata for a URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cruzfoam.com/wp-json/oembed/1.0/embed",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxwidth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL of the resource for which to fetch oEmbed data."
+              }
+            ]
+          },
+          "docs": "Return the oEmbed 1.0 response for a cruzfoam.com URL."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

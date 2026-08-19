@@ -1,0 +1,160 @@
+{
+  "item": [
+    {
+      "id": "717cac85-4ccc-45cb-ab74-6c58becd5cce",
+      "name": "SEO",
+      "description": {
+        "content": "Rendered head metadata and JSON-LD graph.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b8b62c7f-c133-47c6-9f03-d43daf4f072c",
+          "name": "Retrieve rendered SEO head metadata for a URL",
+          "request": {
+            "name": "Retrieve rendered SEO head metadata for a URL",
+            "description": {
+              "content": "Return the Yoast-rendered head HTML and the parsed JSON-LD schema graph for a cruzfoam.com URL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "yoast",
+                "v1",
+                "get_head"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) The cruzfoam.com URL to render head metadata for."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49348fcc-74f2-4d34-b33c-71bc700d6876",
+              "name": "Rendered head metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yoast",
+                    "v1",
+                    "get_head"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"json\": {},\n  \"html\": \"string\",\n  \"status\": 6147\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09510611-880a-4d7c-9a98-5dbf512d799d",
+              "name": "No such resource or no matching route — rest_no_route / rest_*_invalid_id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yoast",
+                    "v1",
+                    "get_head"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2970,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cruzfoam.com/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6d9135ca-f6f8-408b-a62f-eb6b5e01ede6",
+    "name": "Cruz Foam SEO Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public Yoast SEO head endpoint for cruzfoam.com, returning the rendered <head> metadata and its parsed JSON-LD schema.org graph for any URL on the site — a structured-data view of every page without scraping the HTML.\n\nContact Support:\n Name: Cruz Foam",
+      "type": "text/plain"
+    }
+  }
+}

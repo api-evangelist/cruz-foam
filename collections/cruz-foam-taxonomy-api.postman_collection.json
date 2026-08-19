@@ -1,0 +1,1776 @@
+{
+  "item": [
+    {
+      "id": "7366353a-b014-4ae0-a5b7-4ab8d1539e74",
+      "name": "Categories",
+      "description": {
+        "content": "Post categories.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48bd9bd6-234b-46bb-b721-d2b8dbec13b6",
+          "name": "List categories",
+          "request": {
+            "name": "List categories",
+            "description": {
+              "content": "Retrieve a collection of post categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "hide_empty",
+                  "value": "false",
+                  "description": "Whether to hide terms not assigned to any posts."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Order sort attribute ascending or descending."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "name",
+                  "description": "Sort collection by term attribute."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "parent",
+                  "value": "<integer>",
+                  "description": "Limit result set to terms assigned to a specific parent."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "post",
+                  "value": "",
+                  "description": "Limit result set to terms assigned to a specific post."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to terms with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to terms with one or more specific slugs."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3fdf8ab4-dfc2-4c93-a043-c194bf201ba0",
+              "name": "List categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Total number of records matching the query.",
+                  "key": "X-WP-Total",
+                  "value": "2588"
+                },
+                {
+                  "disabled": false,
+                  "description": "Total number of pages available at the current per_page.",
+                  "key": "X-WP-TotalPages",
+                  "value": "2588"
+                },
+                {
+                  "disabled": false,
+                  "description": "RFC 8288 pagination links (rel=\"next\" / rel=\"prev\").",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 7702,\n    \"count\": 4392,\n    \"description\": \"string\",\n    \"link\": \"http://FVvdLzSUcrviaCGPljpxpsyHhbWNwlHHk.udhECjQ6ny6KtD\",\n    \"name\": \"string\",\n    \"slug\": \"string\",\n    \"taxonomy\": \"category\",\n    \"parent\": 5346,\n    \"meta\": {},\n    \"acf\": {}\n  },\n  {\n    \"id\": 2456,\n    \"count\": 5424,\n    \"description\": \"string\",\n    \"link\": \"http://XpkvxrvUHYRBITD.gcQDxC2Y2e7.2bm\",\n    \"name\": \"string\",\n    \"slug\": \"string\",\n    \"taxonomy\": \"category\",\n    \"parent\": 9578,\n    \"meta\": {},\n    \"acf\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96c4e864-5c2a-469f-aea9-51d7f88cf40d",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "718b8518-cbad-4cd5-a182-dbd50a9f71d8",
+              "name": "Authentication required or insufficient permission — rest_forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "parent",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "961f3032-3a4d-4347-b9ab-999bfee99bfe",
+          "name": "Retrieve a category",
+          "request": {
+            "name": "Retrieve a category",
+            "description": {
+              "content": "Retrieve a single category by its numeric id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "categories",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the term."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "08051fb5-7cc6-4dc7-8503-b0d0fc665b09",
+              "name": "Retrieve a category",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "categories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6696,\n  \"count\": 8153,\n  \"description\": \"string\",\n  \"link\": \"https://Zjwwd.llqgFxwiMczSPojRo\",\n  \"name\": \"string\",\n  \"slug\": \"string\",\n  \"taxonomy\": \"category\",\n  \"parent\": 1937,\n  \"meta\": {},\n  \"acf\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92ee3032-c72c-48f7-9d3d-a39731b3edc3",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "categories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5fefe29b-51cb-406a-822d-5ddb47fdf180",
+              "name": "No such resource or no matching route — rest_no_route / rest_*_invalid_id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "categories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "99b89a0d-5c43-4db3-b565-1dfd1446ad00",
+      "name": "Tags",
+      "description": {
+        "content": "Post tags.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42e569cb-87c6-46eb-936c-e17251d981ee",
+          "name": "List tags",
+          "request": {
+            "name": "List tags",
+            "description": {
+              "content": "Retrieve a collection of post tags.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "hide_empty",
+                  "value": "false",
+                  "description": "Whether to hide terms not assigned to any posts."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset the result set by a specific number of items."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Order sort attribute ascending or descending."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "name",
+                  "description": "Sort collection by term attribute."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "post",
+                  "value": "",
+                  "description": "Limit result set to terms assigned to a specific post."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to terms with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to terms with one or more specific slugs."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f934a67e-64f8-4dfe-b7e6-2e37424930cd",
+              "name": "List tags",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Total number of records matching the query.",
+                  "key": "X-WP-Total",
+                  "value": "2588"
+                },
+                {
+                  "disabled": false,
+                  "description": "Total number of pages available at the current per_page.",
+                  "key": "X-WP-TotalPages",
+                  "value": "2588"
+                },
+                {
+                  "disabled": false,
+                  "description": "RFC 8288 pagination links (rel=\"next\" / rel=\"prev\").",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 454,\n    \"count\": 6626,\n    \"description\": \"string\",\n    \"link\": \"https://LffeVWdvgLHSAldllAw.weYojyaBhv4fc\",\n    \"name\": \"string\",\n    \"slug\": \"string\",\n    \"taxonomy\": \"post_tag\",\n    \"meta\": {}\n  },\n  {\n    \"id\": 5113,\n    \"count\": 6893,\n    \"description\": \"string\",\n    \"link\": \"http://nTTScnHRbJgOztNhiahoEeaDckE.wzeg.wz2Ojm\",\n    \"name\": \"string\",\n    \"slug\": \"string\",\n    \"taxonomy\": \"post_tag\",\n    \"meta\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31a138f4-ad86-45d1-9a67-68c3280437fd",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0731dad0-9cd6-48eb-9b42-0528a46bca45",
+              "name": "Authentication required or insufficient permission — rest_forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b168113-8274-4675-b4d1-d30c36f8a1b0",
+          "name": "Retrieve a tag",
+          "request": {
+            "name": "Retrieve a tag",
+            "description": {
+              "content": "Retrieve a single tag by its numeric id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "tags",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the term."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13bbdfc1-0590-4ad6-a853-9ff6bc3062df",
+              "name": "Retrieve a tag",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "tags",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8013,\n  \"count\": 6931,\n  \"description\": \"string\",\n  \"link\": \"https://vLZWLndlsxOZwfirFZtoOURknP.tbmDgFsF6fsYcqaL4X,6Fib41lbotYqr.4nIDGlLbFDtpseKk-D5he\",\n  \"name\": \"string\",\n  \"slug\": \"string\",\n  \"taxonomy\": \"post_tag\",\n  \"meta\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74755974-fb37-4f68-94cc-08434fd9938b",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "tags",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b0691de-da54-43e5-a605-147b1cf22028",
+              "name": "No such resource or no matching route — rest_no_route / rest_*_invalid_id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "tags",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6546226b-810a-461b-ae91-78ebb865131a",
+      "name": "Portfolio Categories",
+      "description": {
+        "content": "Segments applied to the customer showcase.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "44c48f97-3743-4b07-bc6e-785bd9cfcd37",
+          "name": "List portfolio categories",
+          "request": {
+            "name": "List portfolio categories",
+            "description": {
+              "content": "Retrieve the portfolio-categories terms used to group the customer showcase.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "portfolio-categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "hide_empty",
+                  "value": "false",
+                  "description": "Whether to hide terms not assigned to any posts."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset the result set by a specific number of items."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Order sort attribute ascending or descending."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "name",
+                  "description": "Sort collection by term attribute."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "post",
+                  "value": "",
+                  "description": "Limit result set to terms assigned to a specific post."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to terms with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to terms with one or more specific slugs."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c62e3db8-9b53-4fc1-867a-001a930f5c98",
+              "name": "List portfolio categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "portfolio-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Total number of records matching the query.",
+                  "key": "X-WP-Total",
+                  "value": "2588"
+                },
+                {
+                  "disabled": false,
+                  "description": "Total number of pages available at the current per_page.",
+                  "key": "X-WP-TotalPages",
+                  "value": "2588"
+                },
+                {
+                  "disabled": false,
+                  "description": "RFC 8288 pagination links (rel=\"next\" / rel=\"prev\").",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 4633,\n    \"count\": 6962,\n    \"description\": \"string\",\n    \"link\": \"http://jAMxyRgOhEl.ragYF.p5RsWK-+hVDJQQxE,uwWGx,bvjql6LiUTeNcZtifQ-zvGH37ddK\",\n    \"name\": \"string\",\n    \"slug\": \"string\",\n    \"taxonomy\": \"portfolio-categories\",\n    \"meta\": {},\n    \"acf\": {}\n  },\n  {\n    \"id\": 7402,\n    \"count\": 7614,\n    \"description\": \"string\",\n    \"link\": \"http://AhHHMhgRdTtBrDNuGsdVLbNIfawf.cnHcYl3NmukERAHjgIqfbowQAno7t,ILzRNlziuxavphICMmxR\",\n    \"name\": \"string\",\n    \"slug\": \"string\",\n    \"taxonomy\": \"portfolio-categories\",\n    \"meta\": {},\n    \"acf\": {}\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bfb9aa0b-6bbb-4862-9a18-dffdb8431c42",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "portfolio-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a17b081-2759-458c-bebd-86c05a6d5cea",
+              "name": "Authentication required or insufficient permission — rest_forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "portfolio-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "hide_empty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "post",
+                      "value": ""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80884ff2-3278-4d2a-971a-35dbc53b52b9",
+          "name": "Retrieve a portfolio category",
+          "request": {
+            "name": "Retrieve a portfolio category",
+            "description": {
+              "content": "Retrieve a single portfolio-categories term by its numeric id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "portfolio-categories",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the term."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7aaafefc-2b77-424f-8925-232e8ec9cf9c",
+              "name": "Retrieve a portfolio category",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "portfolio-categories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1698,\n  \"count\": 7503,\n  \"description\": \"string\",\n  \"link\": \"http://yYfYnzdYXAtFTxRy.zbfQ-J2rlnXBk6TwEi4IhAZZkblDASL-59p\",\n  \"name\": \"string\",\n  \"slug\": \"string\",\n  \"taxonomy\": \"portfolio-categories\",\n  \"meta\": {},\n  \"acf\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e267d7e8-2502-445a-8e79-62bc0585b3a7",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "portfolio-categories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e05866ae-856f-403c-b196-0d6c631da6da",
+              "name": "No such resource or no matching route — rest_no_route / rest_*_invalid_id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "portfolio-categories",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the term."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 9388,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cruzfoam.com/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3e7b5fc1-58c3-4fc9-b31e-aa4f624f00a4",
+    "name": "Cruz Foam Taxonomy API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated read access to the classification vocabularies behind cruzfoam.com: post categories, post tags, and the portfolio-categories taxonomy that groups the customer showcase by market segment. Anonymous access is read-only: the collection answers `Allow: GET` without credentials. Write methods exist on the same routes but require WordPress application-password authentication and are not part of the public surface.\n\nContact Support:\n Name: Cruz Foam",
+      "type": "text/plain"
+    }
+  }
+}

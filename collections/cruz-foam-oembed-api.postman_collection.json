@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "d6aceb81-0a47-4f21-8ed7-af3001d94a49",
+      "name": "oEmbed",
+      "description": {
+        "content": "oEmbed 1.0 provider endpoint.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73f44ba7-2782-47ca-86bd-1654702d4422",
+          "name": "Retrieve oEmbed metadata for a URL",
+          "request": {
+            "name": "Retrieve oEmbed metadata for a URL",
+            "description": {
+              "content": "Return the oEmbed 1.0 response for a cruzfoam.com URL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "oembed",
+                "1.0",
+                "embed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxwidth",
+                  "value": "600"
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<uri>",
+                  "description": "(Required) The URL of the resource for which to fetch oEmbed data."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a6d974c5-8e54-496a-b6d9-590ec1e3a8e7",
+              "name": "oEmbed 1.0 response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oembed",
+                    "1.0",
+                    "embed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"version\": \"string\",\n  \"provider_name\": \"string\",\n  \"provider_url\": \"https://T.shzRQXjfnLUkkjhBy0mhmwLt\",\n  \"author_name\": \"string\",\n  \"author_url\": \"https://pSDsaOneh.kzxugPS9M8hFGuFvX1cMX8KpE+0JcRoO-VU9SNelOMZDxJqDOs94aP,O\",\n  \"title\": \"string\",\n  \"type\": \"string\",\n  \"width\": 2711,\n  \"height\": 7778,\n  \"html\": \"string\",\n  \"thumbnail_url\": \"https://h.miraWjKo4,Q4Izu+83eCdjb-g\",\n  \"thumbnail_width\": 5596,\n  \"thumbnail_height\": 524\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7361230-542c-451a-a18f-47c01ca1ac5f",
+              "name": "No such resource or no matching route — rest_no_route / rest_*_invalid_id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oembed",
+                    "1.0",
+                    "embed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "maxwidth",
+                      "value": "600"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<uri>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 8383,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cruzfoam.com/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1c8871af-bb80-4a2f-9f8f-e8a58a03e0ea",
+    "name": "Cruz Foam oEmbed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public oEmbed 1.0 provider endpoint for cruzfoam.com URLs, returning embeddable rich metadata (title, author, thumbnail, iframe HTML) for any post, page or customer showcase entry.\n\nContact Support:\n Name: Cruz Foam",
+      "type": "text/plain"
+    }
+  }
+}

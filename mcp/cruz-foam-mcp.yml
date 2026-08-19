@@ -2,12 +2,11 @@ generated: '2026-08-11'
 method: derived
 status: candidate
 source: openapi/ (23 operations across 9 derived specs)
-description: >-
-  Cruz Foam operates no MCP server. Searched the docs surface, mcp.cruzfoam.com (NXDOMAIN), the
-  npm registry and the site itself on 2026-08-11 and found none. The tool list below is a
-  CANDIDATE derived one-to-one from the OpenAPI operations this repo harvested — it is what an
-  MCP server over this surface would expose, not something Cruz Foam publishes. Every tool is
-  read-only because the whole anonymous surface is read-only.
+description: Cruz Foam operates no MCP server. Searched the docs surface, mcp.cruzfoam.com (NXDOMAIN),
+  the npm registry and the site itself on 2026-08-11 and found none. The tool list below is a CANDIDATE
+  derived one-to-one from the OpenAPI operations this repo harvested — it is what an MCP server over this
+  surface would expose, not something Cruz Foam publishes. Every tool is read-only because the whole anonymous
+  surface is read-only.
 server:
   name: cruz-foam
   transport: http
@@ -17,30 +16,88 @@ auth:
   required: false
   note: All listed tools work anonymously over plain HTTPS.
 tools:
-- {name: list_posts, description: List Cruz Foam news and blog posts, source_operation: 'openapi/cruz-foam-posts-api-openapi.yml#listPosts'}
-- {name: get_post, description: Retrieve a single post by id, source_operation: 'openapi/cruz-foam-posts-api-openapi.yml#getPost'}
-- {name: list_pages, description: List the static marketing and policy pages, source_operation: 'openapi/cruz-foam-pages-api-openapi.yml#listPages'}
-- {name: get_page, description: Retrieve a single page by id, source_operation: 'openapi/cruz-foam-pages-api-openapi.yml#getPage'}
-- {name: list_customers, description: List the customer showcase — brands shipping in Cruz Foam materials, source_operation: 'openapi/cruz-foam-customers-api-openapi.yml#listCustomers'}
-- {name: get_customer, description: Retrieve a single customer showcase entry by id, source_operation: 'openapi/cruz-foam-customers-api-openapi.yml#getCustomer'}
-- {name: list_media, description: List media library attachments, source_operation: 'openapi/cruz-foam-media-api-openapi.yml#listMedia'}
-- {name: get_media_item, description: Retrieve a single media attachment by id, source_operation: 'openapi/cruz-foam-media-api-openapi.yml#getMediaItem'}
-- {name: list_categories, description: List post categories, source_operation: 'openapi/cruz-foam-taxonomy-api-openapi.yml#listCategories'}
-- {name: get_category, description: Retrieve a category by id, source_operation: 'openapi/cruz-foam-taxonomy-api-openapi.yml#getCategory'}
-- {name: list_tags, description: List post tags, source_operation: 'openapi/cruz-foam-taxonomy-api-openapi.yml#listTags'}
-- {name: get_tag, description: Retrieve a tag by id, source_operation: 'openapi/cruz-foam-taxonomy-api-openapi.yml#getTag'}
-- {name: list_portfolio_categories, description: List the market segments the customer showcase is grouped by, source_operation: 'openapi/cruz-foam-taxonomy-api-openapi.yml#listPortfolioCategories'}
-- {name: get_portfolio_category, description: Retrieve a portfolio category by id, source_operation: 'openapi/cruz-foam-taxonomy-api-openapi.yml#getPortfolioCategory'}
-- {name: search_site, description: Cross-content search over posts, pages and the customer showcase, source_operation: 'openapi/cruz-foam-search-api-openapi.yml#search'}
-- {name: get_route_index, description: Retrieve the self-describing API route index, source_operation: 'openapi/cruz-foam-discovery-api-openapi.yml#getRouteIndex'}
-- {name: list_types, description: List registered content types, source_operation: 'openapi/cruz-foam-discovery-api-openapi.yml#listTypes'}
-- {name: list_taxonomies, description: List registered taxonomies, source_operation: 'openapi/cruz-foam-discovery-api-openapi.yml#listTaxonomies'}
-- {name: list_statuses, description: List publication statuses, source_operation: 'openapi/cruz-foam-discovery-api-openapi.yml#listStatuses'}
-- {name: list_users, description: List public author records, source_operation: 'openapi/cruz-foam-discovery-api-openapi.yml#listUsers'}
-- {name: get_user, description: Retrieve a public author record by id, source_operation: 'openapi/cruz-foam-discovery-api-openapi.yml#getUser'}
-- {name: get_oembed, description: Retrieve oEmbed metadata for a cruzfoam.com URL, source_operation: 'openapi/cruz-foam-oembed-api-openapi.yml#getOembed'}
-- {name: get_seo_head, description: Retrieve rendered head metadata and the JSON-LD schema graph for a cruzfoam.com URL, source_operation: 'openapi/cruz-foam-seo-api-openapi.yml#getSeoHead'}
+- name: list_posts
+  description: List Cruz Foam news and blog posts
+  source_operation: openapi/cruz-foam-posts-api-openapi.yml#listPosts
+- name: get_post
+  description: Retrieve a single post by id
+  source_operation: openapi/cruz-foam-posts-api-openapi.yml#getPost
+- name: list_pages
+  description: List the static marketing and policy pages
+  source_operation: openapi/cruz-foam-pages-api-openapi.yml#listPages
+- name: get_page
+  description: Retrieve a single page by id
+  source_operation: openapi/cruz-foam-pages-api-openapi.yml#getPage
+- name: list_customers
+  description: List the customer showcase — brands shipping in Cruz Foam materials
+  source_operation: openapi/cruz-foam-customers-api-openapi.yml#listCustomers
+- name: get_customer
+  description: Retrieve a single customer showcase entry by id
+  source_operation: openapi/cruz-foam-customers-api-openapi.yml#getCustomer
+- name: list_media
+  description: List media library attachments
+  source_operation: openapi/cruz-foam-media-api-openapi.yml#listMedia
+- name: get_media_item
+  description: Retrieve a single media attachment by id
+  source_operation: openapi/cruz-foam-media-api-openapi.yml#getMediaItem
+- name: list_categories
+  description: List post categories
+  source_operation: openapi/cruz-foam-taxonomy-api-openapi.yml#listCategories
+- name: get_category
+  description: Retrieve a category by id
+  source_operation: openapi/cruz-foam-taxonomy-api-openapi.yml#getCategory
+- name: list_tags
+  description: List post tags
+  source_operation: openapi/cruz-foam-taxonomy-api-openapi.yml#listTags
+- name: get_tag
+  description: Retrieve a tag by id
+  source_operation: openapi/cruz-foam-taxonomy-api-openapi.yml#getTag
+- name: list_portfolio_categories
+  description: List the market segments the customer showcase is grouped by
+  source_operation: openapi/cruz-foam-taxonomy-api-openapi.yml#listPortfolioCategories
+- name: get_portfolio_category
+  description: Retrieve a portfolio category by id
+  source_operation: openapi/cruz-foam-taxonomy-api-openapi.yml#getPortfolioCategory
+- name: search_site
+  description: Cross-content search over posts
+  pages and the customer showcase: null
+  source_operation: openapi/cruz-foam-search-api-openapi.yml#search
+- name: get_route_index
+  description: Retrieve the self-describing API route index
+  source_operation: openapi/cruz-foam-discovery-api-openapi.yml#getRouteIndex
+- name: list_types
+  description: List registered content types
+  source_operation: openapi/cruz-foam-discovery-api-openapi.yml#listTypes
+- name: list_taxonomies
+  description: List registered taxonomies
+  source_operation: openapi/cruz-foam-discovery-api-openapi.yml#listTaxonomies
+- name: list_statuses
+  description: List publication statuses
+  source_operation: openapi/cruz-foam-discovery-api-openapi.yml#listStatuses
+- name: list_users
+  description: List public author records
+  source_operation: openapi/cruz-foam-discovery-api-openapi.yml#listUsers
+- name: get_user
+  description: Retrieve a public author record by id
+  source_operation: openapi/cruz-foam-discovery-api-openapi.yml#getUser
+- name: get_oembed
+  description: Retrieve oEmbed metadata for a cruzfoam.com URL
+  source_operation: openapi/cruz-foam-oembed-api-openapi.yml#getOembed
+- name: get_seo_head
+  description: Retrieve rendered head metadata and the JSON-LD schema graph for a cruzfoam.com URL
+  source_operation: openapi/cruz-foam-seo-api-openapi.yml#getSeoHead
 evidence:
-- {url: 'https://cruzfoam.com/', http_status: 200, finding: No MCP server referenced anywhere on the site.}
-- {host: mcp.cruzfoam.com, dns: NXDOMAIN}
-- {registry: npm, query: cruzfoam, results: 0}
+- url: https://cruzfoam.com/
+  http_status: 200
+  finding: No MCP server referenced anywhere on the site.
+- host: mcp.cruzfoam.com
+  dns: NXDOMAIN
+- registry: npm
+  query: cruzfoam
+  results: 0
+deployment:
+  mode: none
+  verified: derived
+  tools: 23
+  checked: '2026-08-12'
+  source: catalog MCP census

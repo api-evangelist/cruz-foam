@@ -1,0 +1,310 @@
+{
+  "item": [
+    {
+      "id": "0ecbdcdc-305b-48e8-b312-c79a6b7513b0",
+      "name": "Search",
+      "description": {
+        "content": "Cross-content search over cruzfoam.com.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "14f3ee99-8e34-4325-9707-0792ad9ecb03",
+          "name": "Search site content",
+          "request": {
+            "name": "Search site content",
+            "description": {
+              "content": "Search across every searchable post type on cruzfoam.com.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtype",
+                  "value": "any",
+                  "description": "Limit results to items of one or more object subtypes."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "post",
+                  "description": "Limit results to items of an object type."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0c43c8d-3f01-4cbd-917f-bc74758047ac",
+              "name": "Search site content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Total number of records matching the query.",
+                  "key": "X-WP-Total",
+                  "value": "6201"
+                },
+                {
+                  "disabled": false,
+                  "description": "Total number of pages available at the current per_page.",
+                  "key": "X-WP-TotalPages",
+                  "value": "6201"
+                },
+                {
+                  "disabled": false,
+                  "description": "RFC 8288 pagination links (rel=\"next\" / rel=\"prev\").",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 6857,\n    \"title\": \"string\",\n    \"url\": \"https://ugGguvYCVzmXrZYSgyroVRgQtGCviRKe.yerKnQdkpkiGl6AY\",\n    \"type\": \"post-format\",\n    \"subtype\": \"customers\"\n  },\n  {\n    \"id\": 1017,\n    \"title\": \"string\",\n    \"url\": \"https://cGivmTjLMzzArxBKGvNCNMribBpmkzbe.byL8CURhtukrOuyZJQblDnh6VdFw4YSMRxm6to5J5mIXOlbYoumGO,S.2h+0DdP\",\n    \"type\": \"post\",\n    \"subtype\": \"portfolio-categories\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b0b75d5-8ad3-496f-a2a0-6256f174d0a3",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 7440,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae5d5f12-5b4c-4797-8d43-9201c92f16eb",
+              "name": "Authentication required or insufficient permission — rest_forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subtype",
+                      "value": "any"
+                    },
+                    {
+                      "key": "type",
+                      "value": "post"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 7440,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cruzfoam.com/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b9e2b3b1-3687-473f-8cd9-1f2462bca71d",
+    "name": "Cruz Foam Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated cross-content search over cruzfoam.com — posts, pages and the customer showcase — returning lightweight id / title / url / type / subtype records (142 searchable objects at capture).\n\nContact Support:\n Name: Cruz Foam",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,732 @@
+{
+  "item": [
+    {
+      "id": "d3bb8d09-4973-4a66-918c-b4c5ababd489",
+      "name": "Customers",
+      "description": {
+        "content": "Brands and case studies shipping with Cruz Foam materials.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "30c58fba-b353-42c5-8b58-0f754e79bb15",
+          "name": "List customer showcase entries",
+          "request": {
+            "name": "List customer showcase entries",
+            "description": {
+              "content": "Retrieve a paginated collection of published customer showcase entries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts published after a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts published before a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "modified_after",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts modified after a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "modified_before",
+                  "value": "<dateTime>",
+                  "description": "Limit response to posts modified before a given ISO8601 compliant date."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset the result set by a specific number of items."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "Order sort attribute ascending or descending."
+                },
+                {
+                  "disabled": false,
+                  "key": "orderby",
+                  "value": "date",
+                  "description": "Sort collection by post attribute."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Current page of the collection."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Maximum number of items to be returned in result set."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Limit results to those matching a string."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_semantics",
+                  "value": "<string>",
+                  "description": "How to interpret the search input."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to posts with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "slug",
+                  "value": "<string>",
+                  "description": "Limit result set to posts with one or more specific slugs."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "publish",
+                  "description": "Limit result set to posts assigned one or more statuses."
+                },
+                {
+                  "disabled": false,
+                  "key": "tax_relation",
+                  "value": "<string>",
+                  "description": "Limit result set based on relationship between multiple taxonomies."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4413cbe9-2f08-4335-810d-c2e5c806defb",
+              "name": "List customer showcase entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    },
+                    {
+                      "key": "tax_relation",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Total number of records matching the query.",
+                  "key": "X-WP-Total",
+                  "value": "3215"
+                },
+                {
+                  "disabled": false,
+                  "description": "Total number of pages available at the current per_page.",
+                  "key": "X-WP-TotalPages",
+                  "value": "3215"
+                },
+                {
+                  "disabled": false,
+                  "description": "RFC 8288 pagination links (rel=\"next\" / rel=\"prev\").",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"1977-06-12T19:24:25.733Z\",\n    \"date_gmt\": \"1996-04-05T21:25:32.309Z\",\n    \"guid\": {\n      \"raw\": \"string\",\n      \"rendered\": \"string\"\n    },\n    \"id\": 8398,\n    \"link\": \"http://AJFiztISGCRXgqF.smqkG3aAWteIrNc2NieU9F,l1nkyKzBQlHndxB3DJ\",\n    \"modified\": \"1981-04-26T00:12:29.595Z\",\n    \"modified_gmt\": \"2012-11-28T15:02:22.794Z\",\n    \"slug\": \"string\",\n    \"status\": \"spam\",\n    \"type\": \"string\",\n    \"password\": \"string\",\n    \"permalink_template\": \"string\",\n    \"generated_slug\": \"string\",\n    \"class_list\": [\n      \"string\",\n      \"string\"\n    ],\n    \"title\": {\n      \"raw\": \"string\",\n      \"rendered\": \"string\"\n    },\n    \"excerpt\": {\n      \"raw\": \"string\",\n      \"rendered\": \"string\",\n      \"protected\": false\n    },\n    \"featured_media\": 6731,\n    \"template\": \"string\",\n    \"portfolio-categories\": [\n      495,\n      662\n    ],\n    \"acf\": {},\n    \"jetpack_sharing_enabled\": true\n  },\n  {\n    \"date\": \"2018-07-21T15:51:07.907Z\",\n    \"date_gmt\": \"2004-08-01T03:06:58.198Z\",\n    \"guid\": {\n      \"raw\": \"string\",\n      \"rendered\": \"string\"\n    },\n    \"id\": 1790,\n    \"link\": \"http://bwin.qmrNP13nFG-laBSGhEqpYsRRSNzMnVPdmLLFHYmDGQe1IxI7EQOxpfN9Rxj4cK\",\n    \"modified\": \"1972-03-15T20:15:57.224Z\",\n    \"modified_gmt\": \"1951-05-25T08:13:20.973Z\",\n    \"slug\": \"string\",\n    \"status\": \"draft\",\n    \"type\": \"string\",\n    \"password\": \"string\",\n    \"permalink_template\": \"string\",\n    \"generated_slug\": \"string\",\n    \"class_list\": [\n      \"string\",\n      \"string\"\n    ],\n    \"title\": {\n      \"raw\": \"string\",\n      \"rendered\": \"string\"\n    },\n    \"excerpt\": {\n      \"raw\": \"string\",\n      \"rendered\": \"string\",\n      \"protected\": false\n    },\n    \"featured_media\": 4105,\n    \"template\": \"string\",\n    \"portfolio-categories\": [\n      3705,\n      1579\n    ],\n    \"acf\": {},\n    \"jetpack_sharing_enabled\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0f09eb5-bda2-4b70-9609-7d0525f7b178",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    },
+                    {
+                      "key": "tax_relation",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2691,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "533885ab-c57a-4281-a56d-2fdb86142f85",
+              "name": "Authentication required or insufficient permission — rest_forbidden.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "modified_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modified_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "orderby",
+                      "value": "date"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_semantics",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "slug",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "publish"
+                    },
+                    {
+                      "key": "tax_relation",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2691,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a9ab333-fe74-4146-a0d6-e188581bc928",
+          "name": "Retrieve a customer showcase entry",
+          "request": {
+            "name": "Retrieve a customer showcase entry",
+            "description": {
+              "content": "Retrieve a single published customer showcase entry by its numeric id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "wp",
+                "v2",
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "view",
+                  "description": "Scope under which the request is made; determines fields present in response."
+                },
+                {
+                  "disabled": false,
+                  "key": "excerpt_length",
+                  "value": "<integer>",
+                  "description": "Override the default excerpt length."
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "The password for the post if it is password protected."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique identifier for the post."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "202a71c3-77cc-461a-b0a1-7f20b44506e5",
+              "name": "Retrieve a customer showcase entry",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the post."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"date\": \"2003-05-04T11:55:42.175Z\",\n  \"date_gmt\": \"2025-03-28T13:15:19.290Z\",\n  \"guid\": {\n    \"raw\": \"string\",\n    \"rendered\": \"string\"\n  },\n  \"id\": 30,\n  \"link\": \"http://wnKhWkfiyvoX.tamof3BPmNUmJR+5paOxSGuxaPwFDQvdGYaNNoMd3Pj3JxfMktSBg9G7HaL\",\n  \"modified\": \"1994-05-11T11:27:11.806Z\",\n  \"modified_gmt\": \"1976-03-14T10:52:53.652Z\",\n  \"slug\": \"string\",\n  \"status\": \"future\",\n  \"type\": \"string\",\n  \"password\": \"string\",\n  \"permalink_template\": \"string\",\n  \"generated_slug\": \"string\",\n  \"class_list\": [\n    \"string\",\n    \"string\"\n  ],\n  \"title\": {\n    \"raw\": \"string\",\n    \"rendered\": \"string\"\n  },\n  \"excerpt\": {\n    \"raw\": \"string\",\n    \"rendered\": \"string\",\n    \"protected\": true\n  },\n  \"featured_media\": 1994,\n  \"template\": \"string\",\n  \"portfolio-categories\": [\n    5146,\n    7146\n  ],\n  \"acf\": {},\n  \"jetpack_sharing_enabled\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a4871f8-92a3-4ba1-b1eb-96c3e4d40868",
+              "name": "Invalid parameter(s) — rest_invalid_param.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the post."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2691,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "56ddb0a6-6b0e-4aee-bd20-bb42d6b56f24",
+              "name": "No such resource or no matching route — rest_no_route / rest_*_invalid_id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wp",
+                    "v2",
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context",
+                      "value": "view"
+                    },
+                    {
+                      "key": "excerpt_length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique identifier for the post."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"data\": {\n    \"status\": 2691,\n    \"params\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cruzfoam.com/wp-json",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "01570dfa-f324-4987-b3e9-5e4d116c5718",
+    "name": "Cruz Foam Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated read access to the Cruz Foam customer showcase — the `customers` custom post type behind cruzfoam.com/customers/, carrying 20 brands that ship in Cruz Foam packaging, each classified by the portfolio-categories taxonomy. This is the one genuinely Cruz-Foam-specific resource on the surface; the rest is stock WordPress. Anonymous access is read-only: the collection answers `Allow: GET` without credentials. Write methods exist on the same routes but require WordPress application-password authentication and are not part of the public surface.\n\nContact Support:\n Name: Cruz Foam",
+      "type": "text/plain"
+    }
+  }
+}
