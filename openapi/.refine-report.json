@@ -1,0 +1,46 @@
+{
+  "provider": "cruz-foam",
+  "sources": [
+    "cruz-foam-customers-api-openapi.yml",
+    "cruz-foam-discovery-api-openapi.yml",
+    "cruz-foam-media-api-openapi.yml",
+    "cruz-foam-oembed-api-openapi.yml",
+    "cruz-foam-pages-api-openapi.yml",
+    "cruz-foam-posts-api-openapi.yml",
+    "cruz-foam-search-api-openapi.yml",
+    "cruz-foam-seo-api-openapi.yml",
+    "cruz-foam-taxonomy-api-openapi.yml"
+  ],
+  "outputs": [
+    "cruz-foam-customers-api-openapi.yml",
+    "cruz-foam-discovery-api-openapi.yml",
+    "cruz-foam-users-api-openapi.yml",
+    "cruz-foam-media-api-openapi.yml",
+    "cruz-foam-oembed-api-openapi.yml",
+    "cruz-foam-pages-api-openapi.yml",
+    "cruz-foam-posts-api-openapi.yml",
+    "cruz-foam-search-api-openapi.yml",
+    "cruz-foam-seo-api-openapi.yml",
+    "cruz-foam-categories-api-openapi.yml",
+    "cruz-foam-portfolio-categories-api-openapi.yml",
+    "cruz-foam-tags-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/cruz-foam-taxonomy-api-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "cruz-foam-customers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-discovery-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-media-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-oembed-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-pages-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-posts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-seo-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cruz-foam-taxonomy-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+4 apis, 12 total)"
+  ],
+  "skipped": []
+}

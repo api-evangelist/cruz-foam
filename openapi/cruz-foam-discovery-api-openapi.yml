@@ -1,261 +1,26 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Cruz Foam Discovery API
   version: wp/v2
-  description: Public, unauthenticated discovery metadata for cruzfoam.com — the self-describing route index, the
-    registered content types and taxonomies, the publication statuses, and the public author records. This is what
-    makes the whole surface machine-readable without documentation.
+  description: Public, unauthenticated discovery metadata for cruzfoam.com — the self-describing route index, the registered content types and taxonomies, the publication statuses, and the public author records. This is what makes the whole surface machine-readable without documentation.
   contact:
     name: Cruz Foam
     url: https://cruzfoam.com/contact/
   x-derived-from: https://cruzfoam.com/wp-json/ route index + per-route HTTP OPTIONS schema documents
   x-derived-on: '2026-08-11'
-  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously
-    readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from
-    the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
+  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
 servers:
 - url: https://cruzfoam.com/wp-json
   description: Cruz Foam WordPress REST API
 tags:
 - name: Discovery
   description: Self-describing metadata for the cruzfoam.com REST surface.
-- name: Users
-  description: Public author records.
 paths:
-  /wp/v2/users:
-    get:
-      operationId: listUsers
-      summary: List public authors
-      description: Retrieve the users who have authored published content (3 at capture).
-      tags:
-      - Users
-      parameters:
-      - name: capabilities
-        in: query
-        description: Limit result set to users matching at least one specific capability provided. Accepts csv list
-          or single capability.
-        schema:
-          type: array
-          items:
-            type: string
-      - name: context
-        in: query
-        description: Scope under which the request is made; determines fields present in response.
-        schema:
-          type: string
-          enum:
-          - view
-          - embed
-          - edit
-          default: view
-      - name: exclude
-        in: query
-        description: Ensure result set excludes specific IDs.
-        schema:
-          type: array
-          items:
-            type: integer
-          default: []
-      - name: has_published_posts
-        in: query
-        description: Limit result set to users who have published posts.
-        schema:
-          type: boolean
-          items:
-            type: string
-            enum:
-              post: post
-              page: page
-              attachment: attachment
-              nav_menu_item: nav_menu_item
-              wp_block: wp_block
-              wp_template: wp_template
-              wp_template_part: wp_template_part
-              wp_global_styles: wp_global_styles
-              wp_navigation: wp_navigation
-              wp_font_family: wp_font_family
-              wp_font_face: wp_font_face
-              customers: customers
-              feedback: feedback
-              jp_pay_order: jp_pay_order
-              jp_pay_product: jp_pay_product
-      - name: include
-        in: query
-        description: Limit result set to specific IDs.
-        schema:
-          type: array
-          items:
-            type: integer
-          default: []
-      - name: offset
-        in: query
-        description: Offset the result set by a specific number of items.
-        schema:
-          type: integer
-      - name: order
-        in: query
-        description: Order sort attribute ascending or descending.
-        schema:
-          type: string
-          enum:
-          - asc
-          - desc
-          default: asc
-      - name: orderby
-        in: query
-        description: Sort collection by user attribute.
-        schema:
-          type: string
-          enum:
-          - id
-          - include
-          - name
-          - registered_date
-          - slug
-          - include_slugs
-          - email
-          - url
-          default: name
-      - name: page
-        in: query
-        description: Current page of the collection.
-        schema:
-          type: integer
-          minimum: 1
-          default: 1
-      - name: per_page
-        in: query
-        description: Maximum number of items to be returned in result set.
-        schema:
-          type: integer
-          minimum: 1
-          maximum: 100
-          default: 10
-      - name: roles
-        in: query
-        description: Limit result set to users matching at least one specific role provided. Accepts csv list or
-          single role.
-        schema:
-          type: array
-          items:
-            type: string
-      - name: search
-        in: query
-        description: Limit results to those matching a string.
-        schema:
-          type: string
-      - name: search_columns
-        in: query
-        description: Array of column names to be searched.
-        schema:
-          type: array
-          items:
-            enum:
-            - email
-            - name
-            - id
-            - username
-            - slug
-            type: string
-          default: []
-      - name: slug
-        in: query
-        description: Limit result set to users with one or more specific slugs.
-        schema:
-          type: array
-          items:
-            type: string
-      - name: who
-        in: query
-        description: Limit result set to users who are considered authors.
-        schema:
-          type: string
-          enum:
-          - authors
-      responses:
-        '200':
-          description: List public authors
-          headers:
-            X-WP-Total:
-              description: Total number of records matching the query.
-              schema:
-                type: integer
-            X-WP-TotalPages:
-              description: Total number of pages available at the current per_page.
-              schema:
-                type: integer
-            Link:
-              description: RFC 8288 pagination links (rel="next" / rel="prev").
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
-        '400':
-          description: Invalid parameter(s) — rest_invalid_param.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          description: Authentication required or insufficient permission — rest_forbidden.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /wp/v2/users/{id}:
-    get:
-      operationId: getUser
-      summary: Retrieve an author
-      description: Retrieve a single public author record by its numeric id.
-      tags:
-      - Users
-      parameters:
-      - name: context
-        in: query
-        description: Scope under which the request is made; determines fields present in response.
-        schema:
-          type: string
-          enum:
-          - view
-          - embed
-          - edit
-          default: view
-      - name: id
-        in: path
-        description: Unique identifier for the user.
-        schema:
-          type: integer
-        required: true
-      responses:
-        '200':
-          description: Retrieve an author
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          description: Invalid parameter(s) — rest_invalid_param.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '404':
-          description: No such resource or no matching route — rest_no_route / rest_*_invalid_id.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
   /:
     get:
       operationId: getRouteIndex
       summary: Retrieve the API route index
-      description: 'The self-describing root document: site name, description, home URL, the list of registered
-        namespaces, the authentication methods offered, and the full route table with per-endpoint methods and arguments.
-        487 routes at capture.'
+      description: 'The self-describing root document: site name, description, home URL, the list of registered namespaces, the authentication methods offered, and the full route table with per-endpoint methods and arguments. 487 routes at capture.'
       tags:
       - Discovery
       parameters:
@@ -370,130 +135,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Error:
-      type: object
-      description: The WordPress REST API error envelope returned on every 4xx/5xx.
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_post_invalid_id.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: The HTTP status code.
-            params:
-              type: object
-              description: Per-parameter validation messages (rest_invalid_param only).
-      required:
-      - code
-      - message
-    User:
-      title: user
-      type: object
-      properties:
-        id:
-          description: Unique identifier for the user.
-          type: integer
-        username:
-          description: Login name for the user.
-          type: string
-          required: true
-        name:
-          description: Display name for the user.
-          type: string
-        first_name:
-          description: First name for the user.
-          type: string
-        last_name:
-          description: Last name for the user.
-          type: string
-        email:
-          description: The email address for the user.
-          type: string
-          format: email
-          required: true
-        url:
-          description: URL of the user.
-          type: string
-          format: uri
-        description:
-          description: Description of the user.
-          type: string
-        link:
-          description: Author URL of the user.
-          type: string
-          format: uri
-        locale:
-          description: Locale for the user.
-          type: string
-          enum:
-          - ''
-          - en_US
-        nickname:
-          description: The nickname for the user.
-          type: string
-        slug:
-          description: An alphanumeric identifier for the user.
-          type: string
-        registered_date:
-          description: Registration date for the user.
-          type: string
-          format: date-time
-        roles:
-          description: Roles assigned to the user.
-          type: array
-          items:
-            type: string
-        password:
-          description: Password for the user (never included).
-          type: string
-          required: true
-        capabilities:
-          description: All capabilities assigned to the user.
-          type: object
-        extra_capabilities:
-          description: Any extra capabilities assigned to the user.
-          type: object
-        avatar_urls:
-          description: Avatar URLs for the user.
-          type: object
-          properties:
-            '24':
-              description: Avatar URL with image size of 24 pixels.
-              type: string
-              format: uri
-            '48':
-              description: Avatar URL with image size of 48 pixels.
-              type: string
-              format: uri
-            '96':
-              description: Avatar URL with image size of 96 pixels.
-              type: string
-              format: uri
-        meta:
-          description: Meta fields.
-          type: object
-          properties:
-            persisted_preferences:
-              type: object
-              title: ''
-              description: ''
-              default: []
-              properties:
-                _modified:
-                  description: The date and time the preferences were updated.
-                  type: string
-                  format: date-time
-              additionalProperties: true
-        acf:
-          description: ACF field data
-          type: object
-          properties: []
     Type:
       title: type
       type: object
@@ -523,8 +164,7 @@ components:
           description: All features, supported by the post type.
           type: object
         has_archive:
-          description: If the value is a string, the value will be used as the archive slug. If the value is false
-            the post type has no archive.
+          description: If the value is a string, the value will be used as the archive slug. If the value is false the post type has no archive.
           type:
           - string
           - boolean
@@ -565,6 +205,29 @@ components:
           - contentOnly
           - false
           description: The template_lock associated with the post type, or false if none.
+    RouteIndex:
+      type: object
+      description: The WordPress REST API root discovery document.
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
+        home:
+          type: string
+          format: uri
+        namespaces:
+          type: array
+          items:
+            type: string
+        authentication:
+          type: object
+        routes:
+          type: object
+          description: Route table keyed by route pattern.
     Taxonomy:
       title: taxonomy
       type: object
@@ -606,8 +269,7 @@ components:
           type: object
           properties:
             public:
-              description: Whether a taxonomy is intended for use publicly either via the admin interface or by
-                front-end users.
+              description: Whether a taxonomy is intended for use publicly either via the admin interface or by front-end users.
               type: boolean
             publicly_queryable:
               description: Whether the taxonomy is publicly queryable.
@@ -624,26 +286,25 @@ components:
             show_in_quick_edit:
               description: Whether to show the taxonomy in the quick/bulk edit panel.
               type: boolean
-    RouteIndex:
+    Error:
       type: object
-      description: The WordPress REST API root discovery document.
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
       properties:
-        name:
+        code:
           type: string
-        description:
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
           type: string
-        url:
-          type: string
-          format: uri
-        home:
-          type: string
-          format: uri
-        namespaces:
-          type: array
-          items:
-            type: string
-        authentication:
+          description: Human-readable error message.
+        data:
           type: object
-        routes:
-          type: object
-          description: Route table keyed by route pattern.
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message

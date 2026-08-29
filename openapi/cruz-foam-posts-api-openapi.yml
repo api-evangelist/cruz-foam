@@ -1,19 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Cruz Foam Posts API
   version: wp/v2
-  description: 'Public, unauthenticated read access to the Cruz Foam news and blog archive (139 published posts
-    at capture) via the WordPress core REST API. Anonymous access is read-only: the collection answers `Allow: GET`
-    without credentials. Write methods exist on the same routes but require WordPress application-password authentication
-    and are not part of the public surface.'
+  description: 'Public, unauthenticated read access to the Cruz Foam news and blog archive (139 published posts at capture) via the WordPress core REST API. Anonymous access is read-only: the collection answers `Allow: GET` without credentials. Write methods exist on the same routes but require WordPress application-password authentication and are not part of the public surface.'
   contact:
     name: Cruz Foam
     url: https://cruzfoam.com/contact/
   x-derived-from: https://cruzfoam.com/wp-json/ route index + per-route HTTP OPTIONS schema documents
   x-derived-on: '2026-08-11'
-  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously
-    readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from
-    the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
+  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
 servers:
 - url: https://cruzfoam.com/wp-json
   description: Cruz Foam WordPress REST API
@@ -343,28 +338,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Error:
-      type: object
-      description: The WordPress REST API error envelope returned on every 4xx/5xx.
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_post_invalid_id.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: The HTTP status code.
-            params:
-              type: object
-              description: Per-parameter validation messages (rest_invalid_param only).
-      required:
-      - code
-      - message
     Post:
       title: post
       type: object
@@ -623,3 +596,25 @@ components:
               type: array
               items:
                 type: integer
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message

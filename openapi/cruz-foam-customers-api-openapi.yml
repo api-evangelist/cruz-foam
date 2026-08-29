@@ -1,21 +1,14 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Cruz Foam Customers API
   version: wp/v2
-  description: 'Public, unauthenticated read access to the Cruz Foam customer showcase — the `customers` custom
-    post type behind cruzfoam.com/customers/, carrying 20 brands that ship in Cruz Foam packaging, each classified
-    by the portfolio-categories taxonomy. This is the one genuinely Cruz-Foam-specific resource on the surface;
-    the rest is stock WordPress. Anonymous access is read-only: the collection answers `Allow: GET` without credentials.
-    Write methods exist on the same routes but require WordPress application-password authentication and are not
-    part of the public surface.'
+  description: 'Public, unauthenticated read access to the Cruz Foam customer showcase — the `customers` custom post type behind cruzfoam.com/customers/, carrying 20 brands that ship in Cruz Foam packaging, each classified by the portfolio-categories taxonomy. This is the one genuinely Cruz-Foam-specific resource on the surface; the rest is stock WordPress. Anonymous access is read-only: the collection answers `Allow: GET` without credentials. Write methods exist on the same routes but require WordPress application-password authentication and are not part of the public surface.'
   contact:
     name: Cruz Foam
     url: https://cruzfoam.com/contact/
   x-derived-from: https://cruzfoam.com/wp-json/ route index + per-route HTTP OPTIONS schema documents
   x-derived-on: '2026-08-11'
-  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously
-    readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from
-    the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
+  x-api-evangelist-note: Third-party profile. Cruz Foam publishes no developer program; this documents the anonymously readable WordPress REST content API behind cruzfoam.com. Every path, parameter and schema here was read from the server's own published OPTIONS documents on 2026-08-11 — nothing is invented.
 servers:
 - url: https://cruzfoam.com/wp-json
   description: Cruz Foam WordPress REST API
@@ -134,8 +127,7 @@ paths:
           type: object
       - name: portfolio-categories_exclude
         in: query
-        description: Limit result set to items except those with specific terms assigned in the portfolio-categories
-          taxonomy.
+        description: Limit result set to items except those with specific terms assigned in the portfolio-categories taxonomy.
         schema:
           type: object
       - name: search
@@ -291,28 +283,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Error:
-      type: object
-      description: The WordPress REST API error envelope returned on every 4xx/5xx.
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_post_invalid_id.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: The HTTP status code.
-            params:
-              type: object
-              description: Per-parameter validation messages (rest_invalid_param only).
-      required:
-      - code
-      - message
     Customer:
       title: customers
       type: object
@@ -463,3 +433,25 @@ components:
               type: array
               items:
                 type: integer
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message
