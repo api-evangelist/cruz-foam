@@ -343,6 +343,8 @@ apis:
   humanURL: https://cruzfoam.com/wp-json/
   baseURL: https://cruzfoam.com/wp-json
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
