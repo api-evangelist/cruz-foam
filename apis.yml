@@ -365,6 +365,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/cruz-foam-capability-edges.yml
+  name: Cruz Foam Business Capability Map
 - type: Overlay
   url: overlays/cruz-foam-taxonomy-api-overlay.yaml
 - type: Website

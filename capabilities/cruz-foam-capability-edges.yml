@@ -1,0 +1,35 @@
+slug: cruz-foam
+provider: Cruz Foam
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Electrical Components & Equipment
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Posts
+  spec_file: cruz-foam-posts-api-openapi.yml
+  capability_id: BC-400.70
+  capability_id_l1: BC-400
+  capability_name: Content Marketing Management
+  confidence: 0.7
+  evidence: read access to the Cruz Foam news and blog archive (139 published posts at capture)
+  reason: Endpoints list and retrieve published blog/news articles for the corporate site — editorial
+    content published for marketing purposes, i.e. Content Marketing Management. Read-only CMS surface
+    caps confidence.
+- tag: SEO
+  spec_file: cruz-foam-seo-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.7
+  evidence: Public Yoast SEO head endpoint for cruzfoam.com, returning the rendered <head> metadata and
+    its parsed JSON-LD schema.org graph
+  reason: Serves search-engine-optimisation metadata for website URLs, which falls squarely under Digital
+    Marketing Management (web, SEO). Single generic endpoint, so not maximal confidence.
