@@ -344,6 +344,8 @@ apis:
   humanURL: https://cruzfoam.com/wp-json/
   baseURL: https://cruzfoam.com/wp-json
   tags:
+  - oEmbed
+  tags_raw:
   - o Embed
   properties:
   - type: OpenAPI
