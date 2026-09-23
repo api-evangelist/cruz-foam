@@ -292,28 +292,6 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Error:
-      type: object
-      description: The WordPress REST API error envelope returned on every 4xx/5xx.
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_post_invalid_id.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: The HTTP status code.
-            params:
-              type: object
-              description: Per-parameter validation messages (rest_invalid_param only).
-      required:
-      - code
-      - message
     Attachment:
       title: attachment
       type: object
@@ -501,3 +479,25 @@ components:
           properties:
             author:
               type: integer
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message

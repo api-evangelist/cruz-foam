@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Cruz Foam O Embed API
+  title: Cruz Foam o Embed API
   version: wp/v2
   description: Public oEmbed 1.0 provider endpoint for cruzfoam.com URLs, returning embeddable rich metadata (title, author, thumbnail, iframe HTML) for any post, page or customer showcase entry.
   contact:
@@ -13,7 +13,7 @@ servers:
 - url: https://cruzfoam.com/wp-json
   description: Cruz Foam WordPress REST API
 tags:
-- name: oEmbed
+- name: o Embed
   description: oEmbed 1.0 provider endpoint.
 paths:
   /oembed/1.0/embed:
@@ -22,7 +22,7 @@ paths:
       summary: Retrieve oEmbed metadata for a URL
       description: Return the oEmbed 1.0 response for a cruzfoam.com URL.
       tags:
-      - oEmbed
+      - o Embed
       parameters:
       - name: format
         in: query
@@ -54,6 +54,28 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      description: The WordPress REST API error envelope returned on every 4xx/5xx.
+      properties:
+        code:
+          type: string
+          description: Machine-readable error code, e.g. rest_post_invalid_id.
+        message:
+          type: string
+          description: Human-readable error message.
+        data:
+          type: object
+          properties:
+            status:
+              type: integer
+              description: The HTTP status code.
+            params:
+              type: object
+              description: Per-parameter validation messages (rest_invalid_param only).
+      required:
+      - code
+      - message
     OEmbedResponse:
       type: object
       description: oEmbed 1.0 rich/link response as served by WordPress.
@@ -87,25 +109,3 @@ components:
           type: integer
         thumbnail_height:
           type: integer
-    Error:
-      type: object
-      description: The WordPress REST API error envelope returned on every 4xx/5xx.
-      properties:
-        code:
-          type: string
-          description: Machine-readable error code, e.g. rest_post_invalid_id.
-        message:
-          type: string
-          description: Human-readable error message.
-        data:
-          type: object
-          properties:
-            status:
-              type: integer
-              description: The HTTP status code.
-            params:
-              type: object
-              description: Per-parameter validation messages (rest_invalid_param only).
-      required:
-      - code
-      - message

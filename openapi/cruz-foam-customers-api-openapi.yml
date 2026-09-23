@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: Cruz Foam Customers API
   version: wp/v2
-  description: 'Public, unauthenticated read access to the Cruz Foam customer showcase — the `customers` custom post type behind cruzfoam.com/customers/, carrying 20 brands that ship in Cruz Foam packaging, each classified by the portfolio-categories taxonomy. This is the one genuinely Cruz-Foam-specific resource on the surface; the rest is stock WordPress. Anonymous access is read-only: the collection answers `Allow: GET` without credentials. Write methods exist on the same routes but require WordPress application-password authentication and are not part of the public surface.'
+  description: Public, unauthenticated read access to the Cruz Foam customer showcase — the `customers` custom post type behind cruzfoam.com/customers/, carrying 20 brands that ship in Cruz Foam packaging, each classified by the portfolio-categories taxonomy.
   contact:
     name: Cruz Foam
     url: https://cruzfoam.com/contact/

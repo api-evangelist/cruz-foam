@@ -1,46 +1,52 @@
 {
   "provider": "cruz-foam",
   "sources": [
+    "_ae-authored/cruz-foam-taxonomy-api-openapi.yml",
     "cruz-foam-customers-api-openapi.yml",
     "cruz-foam-discovery-api-openapi.yml",
     "cruz-foam-media-api-openapi.yml",
-    "cruz-foam-oembed-api-openapi.yml",
+    "cruz-foam-o-embed-api-openapi.yml",
     "cruz-foam-pages-api-openapi.yml",
     "cruz-foam-posts-api-openapi.yml",
     "cruz-foam-search-api-openapi.yml",
     "cruz-foam-seo-api-openapi.yml",
-    "cruz-foam-taxonomy-api-openapi.yml"
+    "cruz-foam-users-api-openapi.yml"
   ],
   "outputs": [
+    "cruz-foam-categories-api-openapi.yml",
+    "cruz-foam-portfolio-categories-api-openapi.yml",
+    "cruz-foam-tags-api-openapi.yml",
     "cruz-foam-customers-api-openapi.yml",
     "cruz-foam-discovery-api-openapi.yml",
-    "cruz-foam-users-api-openapi.yml",
     "cruz-foam-media-api-openapi.yml",
-    "cruz-foam-oembed-api-openapi.yml",
+    "cruz-foam-o-embed-api-openapi.yml",
     "cruz-foam-pages-api-openapi.yml",
     "cruz-foam-posts-api-openapi.yml",
     "cruz-foam-search-api-openapi.yml",
     "cruz-foam-seo-api-openapi.yml",
-    "cruz-foam-categories-api-openapi.yml",
-    "cruz-foam-portfolio-categories-api-openapi.yml",
-    "cruz-foam-tags-api-openapi.yml"
+    "cruz-foam-users-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/cruz-foam-taxonomy-api-openapi.yml"
-  ],
+  "archived": [],
   "errors": [],
-  "warnings": [],
-  "notes": [
-    "cruz-foam-customers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-discovery-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-media-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-oembed-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-pages-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-posts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-search-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-seo-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "cruz-foam-taxonomy-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: written (+4 apis, 12 total)"
+  "warnings": [
+    "cruz-foam-customers-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /wp/v2/customers get, /wp/v2/customers/{id} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-discovery-api-openapi.yml: previously refined output kept for 4 operation(s) no archived document covers (e.g. / get, /wp/v2/statuses get, /wp/v2/taxonomies get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-media-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /wp/v2/media get, /wp/v2/media/{id} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-o-embed-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /oembed/1.0/embed get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-pages-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /wp/v2/pages get, /wp/v2/pages/{id} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-posts-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /wp/v2/posts get, /wp/v2/posts/{id} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-search-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /wp/v2/search get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-seo-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /yoast/v1/get_head get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "cruz-foam-users-api-openapi.yml: previously refined output kept for 2 operation(s) no archived document covers (e.g. /wp/v2/users get, /wp/v2/users/{id} get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
   ],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cruz-foam-taxonomy-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "cruz-foam-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cruz-foam-portfolio-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cruz-foam-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

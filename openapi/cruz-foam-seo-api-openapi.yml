@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: Cruz Foam Metadata SEO API
   version: wp/v2
-  description: Public Yoast SEO head endpoint for cruzfoam.com, returning the rendered <head> metadata and its parsed JSON-LD schema.org graph for any URL on the site — a structured-data view of every page without scraping the HTML.
+  description: Public Yoast SEO head endpoint for cruzfoam.com, returning the rendered metadata and its parsed JSON-LD schema.org graph for any URL on the site — a structured-data view of every page without scraping the HTML.
   contact:
     name: Cruz Foam
     url: https://cruzfoam.com/contact/
@@ -46,6 +46,18 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    SeoHead:
+      type: object
+      description: Yoast SEO head payload.
+      properties:
+        json:
+          type: object
+          description: Parsed head metadata including the schema.org @graph.
+        html:
+          type: string
+          description: The rendered <head> HTML fragment.
+        status:
+          type: integer
     Error:
       type: object
       description: The WordPress REST API error envelope returned on every 4xx/5xx.
@@ -68,15 +80,3 @@ components:
       required:
       - code
       - message
-    SeoHead:
-      type: object
-      description: Yoast SEO head payload.
-      properties:
-        json:
-          type: object
-          description: Parsed head metadata including the schema.org @graph.
-        html:
-          type: string
-          description: The rendered <head> HTML fragment.
-        status:
-          type: integer

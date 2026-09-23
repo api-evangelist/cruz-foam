@@ -205,29 +205,6 @@ components:
           - contentOnly
           - false
           description: The template_lock associated with the post type, or false if none.
-    RouteIndex:
-      type: object
-      description: The WordPress REST API root discovery document.
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        url:
-          type: string
-          format: uri
-        home:
-          type: string
-          format: uri
-        namespaces:
-          type: array
-          items:
-            type: string
-        authentication:
-          type: object
-        routes:
-          type: object
-          description: Route table keyed by route pattern.
     Taxonomy:
       title: taxonomy
       type: object
@@ -286,6 +263,29 @@ components:
             show_in_quick_edit:
               description: Whether to show the taxonomy in the quick/bulk edit panel.
               type: boolean
+    RouteIndex:
+      type: object
+      description: The WordPress REST API root discovery document.
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
+        home:
+          type: string
+          format: uri
+        namespaces:
+          type: array
+          items:
+            type: string
+        authentication:
+          type: object
+        routes:
+          type: object
+          description: Route table keyed by route pattern.
     Error:
       type: object
       description: The WordPress REST API error envelope returned on every 4xx/5xx.
