@@ -12,54 +12,6 @@ artifacts:
   capabilities/cruz-foam-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
-  collections/cruz-foam-customers-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-customers-api
-  collections/cruz-foam-customers-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-customers-api
-  collections/cruz-foam-discovery-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-discovery-api
-  collections/cruz-foam-discovery-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-discovery-api
-  collections/cruz-foam-media-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-media-api
-  collections/cruz-foam-media-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-media-api
-  collections/cruz-foam-oembed-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-oembed-api
-  collections/cruz-foam-oembed-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-oembed-api
-  collections/cruz-foam-pages-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-pages-api
-  collections/cruz-foam-pages-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-pages-api
-  collections/cruz-foam-posts-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-posts-api
-  collections/cruz-foam-posts-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-posts-api
-  collections/cruz-foam-search-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-search-api
-  collections/cruz-foam-search-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-search-api
-  collections/cruz-foam-seo-api.opencollection.json:
-    method: derived
-    evidence: openapi/cruz-foam-seo-api
-  collections/cruz-foam-seo-api.postman_collection.json:
-    method: derived
-    evidence: openapi/cruz-foam-seo-api
   collections/cruz-foam-taxonomy-api.opencollection.json:
     method: unknown
     evidence: no authorship recorded
@@ -81,40 +33,10 @@ artifacts:
   examples/cruz-foam-examples.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-12T193225.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-17T064519.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T080027.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T082702.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T114122.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T165047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T191845.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T205517.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-21T110057.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T064859.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T171257.yml:
+  front-door-ai/2026-09-17.yml:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-08-25T125852.yml:
@@ -201,6 +123,123 @@ artifacts:
   kin/score-2026-09-05T072335.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T144739.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T195450.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T211839.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T011047.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T211804.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T224210.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T200636.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T213054.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T214843.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T232836.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T204815.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T222408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T062655.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T080032.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T204651.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T221936.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-13T214537.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T064754.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T210656.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T225847.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T211329.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T230249.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T210549.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T225339.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T211151.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T233623.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T205255.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T231945.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T165737.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T193153.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T205903.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T232958.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T211425.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T233935.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-22T213221.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-23T000603.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T064009.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T090406.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T161608.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/cruz-foam-lifecycle.yml:
     method: unknown
     evidence: no authorship recorded
@@ -212,66 +251,6 @@ artifacts:
     evidence: declared in the artifact
   mcp/cruz-foam-tool-crosswalk.yml:
     method: derived
-    evidence: declared in the artifact
-  openapi/cruz-foam-categories-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-customers-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-discovery-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-media-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-oembed-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-pages-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-portfolio-categories-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-posts-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-search-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-seo-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-tags-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  openapi/cruz-foam-users-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
-  overlays/cruz-foam-customers-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-discovery-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-media-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-oembed-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-pages-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-posts-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-search-api-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
-  overlays/cruz-foam-seo-api-overlay.yaml:
-    method: generated
     evidence: declared in the artifact
   overlays/cruz-foam-taxonomy-api-overlay.yaml:
     method: generated
