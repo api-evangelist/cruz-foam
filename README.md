@@ -64,5 +64,131 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cruz Foam is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Cruz Foam is a circular materials company founded in 2017 in Santa Cruz, California by John Felts and Marco Rolandi out of research at the UC Santa Cruz Baskin School of Engineering. It makes a certified compostable replacement for expanded polystyrene, built from chitin recovered from shrimp and crustacean shells that would otherwise go to landfill, combined with starches and fibers diverted from agricultural waste streams. Its products include Cruz Foam protective packaging, Cruz Cool insulated cold-chain shippers, and EcoVino wine shippers, sold to consumer brands, appliance manufacturers, seafood and cold-chain shippers, and direct-to-consumer retailers. The company was named to TIME's Best Inventions of 2023 and Fast Company's Most Innovative Companies in 2024. Cruz Foam is a materials manufacturer rather than a software vendor, and publishes no commercial or developer-facing product API, no developer portal, and no SDKs. The only machine-readable interface it exposes is the WordPress REST content API behind its corporate website at cruzfoam.com, which is captured here for discovery purposes and is anonymously readable but read-only.
+
+**Areas:** Company · Materials Science · Sustainable Packaging · Compostable Materials · Biomaterials · Circular Economy · Manufacturing · Consumer Packaged Goods · Cold Chain · Sustainability
+
+## Cruz Foam on APIs.io
+
+Everything profiled for Cruz Foam is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cruz-foam/](https://apis.io/providers/cruz-foam/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Cruz Foam Website (WordPress REST)](https://apis.io/apis/cruz-foam/cruzfoam-com-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the Cruz Foam website at cruzfoam.com: the route index of the site's content management system, catalogued as one…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [cruz-foam](https://apis.io/servers/cruz-foam/cruz-foam/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Cruz Foam Agentic Access](https://apis.io/agentic-access/cruz-foam/cruz-foam-agentic-access/)
+
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-customers-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-discovery-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-media-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-oembed-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-pages-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-posts-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-search-api/)
+- [Moved to /providers/cruz-foam/](https://apis.io/collections/cruz-foam/open-cruz-foam-seo-api/)
+- [Cruz Foam Taxonomy API](https://apis.io/collections/cruz-foam/open-cruz-foam-taxonomy-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Cruz Foam Taxonomy Api Overlay](https://apis.io/overlays/cruz-foam/cruz-foam-taxonomy-api-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cruz Foam Authentication](https://apis.io/security/cruz-foam/cruz-foam-authentication/)
+- [Cruz Foam Domain Security](https://apis.io/security/cruz-foam/cruz-foam-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cruz Foam Plans Pricing](https://apis.io/plans/cruz-foam/cruz-foam-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cruz Foam Rate Limits](https://apis.io/rate-limits/cruz-foam/cruz-foam-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://cruzfoam.com/)
+- [Blog](https://cruzfoam.com/blog/)
+- [Terms of service](https://cruzfoam.com/terms/)
+- [Privacy policy](https://cruzfoam.com/privacy/)
+
+## API Evangelist rating
+
+**Kin Score 18.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.0 |
+| Contract quality | 7.3 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 25.6 |
+| Access clarity | 21.1 |
+
+**Agent readiness 11.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cruz-foam/](https://apis.io/providers/cruz-foam/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cruz Foam: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cruz-foam/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
